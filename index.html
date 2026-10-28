@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="ikoner/css/fontawesome.css" rel="stylesheet">
+    <link href="ikoner/css/brands.css" rel="stylesheet">
+    <link href="ikoner/css/solid.css" rel="stylesheet">
+    <link href="ikoner/css/regular.css" rel="stylesheet">
+    <title>Iselin Magnussen – Portefølje</title>
+</head>
+
+<body>
+    <div id="grid-container">
+
+<!--Toppmeny-->
+        <header>
+            <a href="index.html" class="logo">Iselin Magnussen</a>
+            <nav class="nav-liste">
+                <ul>
+                    <li><a href="#om-meg">Om meg</a></li>
+                    <li><a href="#prosjekter">Prosjekter</a></li>
+                    <li><a href="#ferdigheter">Ferdigheter</a></li>
+                    <li><a href="#erfaring">Erfaring</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+<!--Banner-->
+            <section class="banner">
+                <h1>software <span>portfolio.</span></h1>
+                <p class="undertittel">Backend · Data · Software engineering</p>
+                <p class="sted"><i class="fa-solid fa-location-dot"></i> Based in Norway, open to opportunities in Europe</p>
+            </section>
+
+<!--Om meg-->
+            <section id="om-meg">
+                <div class="bilde-plass portrett">
+                    <!--Bytt ut med: <img src="bilder/portrett.jpg" alt="Portrett av Iselin Magnussen">-->
+                    <p>Portrett her</p>
+                </div>
+                <div class="om-tekst">
+                    <h2>Hi, I'm Iselin!</h2>
+                    <p class="rolle">Information Systems student &amp; aspiring software developer</p>
+                    <p>I'm a final-year Information Systems student who enjoys building applications, working with data and solving technical problems. I'm especially interested in backend development, databases and data analytics.</p>
+                    <div class="knapper">
+                        <a href="#prosjekter" class="knapp mork">Se prosjektene mine</a>
+                        <a href="cv.pdf" class="knapp lys"><i class="fa-solid fa-download"></i> Last ned CV</a>
+                    </div>
+                </div>
+                <ul class="tall">
+                    <li><strong>9</strong> Projects in development, design and marketing</li>
+                    <li><strong>10+</strong> Technologies worked with</li>
+                    <li><strong>2027</strong> Bachelor in Information Systems</li>
+                </ul>
+            </section>
+
+<!--Prosjekter-->
+            <section id="prosjekter">
+                <h2>Featured projects</h2>
+                <p class="under">Et utvalg av prosjekter fra studiet</p>
+                <h3 class="undergruppe">Development</h3>
+
+                <div class="prosjekt-liste">
+                    <article>
+                        <a href="tourplanner.html"><img src="bilder/tourplanner-wireframe.png" alt="Wireframe av TourPlanner med turliste, kart og bildegalleri" class="prosjekt-bilde"></a>
+                        <p class="etikett">Fullstack</p>
+                        <h3><a href="tourplanner.html">TourPlanner</a></h3>
+                        <p>Web app for planning tours and logging trips, with real routes on a map, photo gallery and search. Team project with 35 unit tests.</p>
+                        <ul class="teknologier">
+                            <li><i class="fa-brands fa-angular"></i> Angular</li>
+                            <li><i class="fa-solid fa-leaf"></i> Spring Boot</li>
+                            <li><i class="fa-solid fa-database"></i> PostgreSQL</li>
+                        </ul>
+                        <a href="tourplanner.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+
+                    <article>
+                        <a href="lost-and-found.html"><img src="bilder/lostfound-pipeline.png" alt="GitHub Actions-pipeline der alle stegene er grønne" class="prosjekt-bilde"></a>
+                        <p class="etikett">Backend &amp; DevOps</p>
+                        <h3><a href="lost-and-found.html">Campus Lost &amp; Found API</a></h3>
+                        <p>Solo project: REST API with a seven-stage CI/CD pipeline and zero-downtime blue/green deployment on AWS.</p>
+                        <ul class="teknologier">
+                            <li><i class="fa-brands fa-node-js"></i> Node.js</li>
+                            <li><i class="fa-brands fa-docker"></i> Docker</li>
+                            <li><i class="fa-brands fa-aws"></i> AWS</li>
+                        </ul>
+                        <a href="lost-and-found.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+
+                    <article>
+                        <a href="nettbutikk.html"><img src="bilder/nettbutikk-forside.jpg" alt="Forsiden av nettbutikken med meny, banner og produktkort" class="prosjekt-bilde"></a>
+                        <p class="etikett">Frontend</p>
+                        <h3><a href="nettbutikk.html">Nettbutikk</a></h3>
+                        <p>Responsive three-page web shop in plain HTML and CSS, built mobile first with semantic markup and at most 5 divs per page.</p>
+                        <ul class="teknologier">
+                            <li><i class="fa-brands fa-html5"></i> HTML</li>
+                            <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+                            <li><i class="fa-solid fa-mobile-screen"></i> Responsive</li>
+                        </ul>
+                        <a href="nettbutikk.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    <article>
+                        <a href="skismoring.html"><img src="bilder/skismoring-er.png" alt="ER-diagram for skismøringsdatabasen" class="prosjekt-bilde hvit"></a>
+                        <p class="etikett">Database</p>
+                        <h3><a href="skismoring.html">Ski Wax Database</a></h3>
+                        <p>Normalised MySQL database that suggests alternative ski waxes based on temperature, snow type, track and skill level.</p>
+                        <ul class="teknologier">
+                            <li><i class="fa-solid fa-database"></i> MySQL</li>
+                            <li><i class="fa-solid fa-sitemap"></i> ER modelling</li>
+                            <li><i class="fa-solid fa-table"></i> SQL views</li>
+                        </ul>
+                        <a href="skismoring.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                </div>
+                <h3 class="undergruppe">Design, requirements &amp; marketing</h3>
+                <div class="prosjekt-liste design">
+                    <article>
+                        <a href="lumeo.html"><img src="bilder/lumeo-3d.jpg" alt="3D-modell av Lumeo-klokken i turkis" class="prosjekt-bilde"></a>
+                        <p class="etikett">UI/UX &amp; Prototyping</p>
+                        <h3><a href="lumeo.html">Lumeo</a></h3>
+                        <p>Wearable that guides people around campus with light, sound and vibration. Designed with Design Thinking and tested with real users.</p>
+                        <ul class="teknologier">
+                            <li><i class="fa-solid fa-pen-ruler"></i> Figma</li>
+                            <li><i class="fa-solid fa-microchip"></i> Micro:bit</li>
+                            <li><i class="fa-solid fa-hand"></i> Usability testing</li>
+                        </ul>
+                        <a href="lumeo.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    <article>
+                        <a href="greenclean.html"><img src="bilder/greenclean-kort.jpg" alt="Tre skjermer fra GreenClean: startskjerm, hovedmeny og skanner" class="prosjekt-bilde"></a>
+                        <p class="etikett">UX Design</p>
+                        <h3><a href="greenclean.html">GreenClean</a></h3>
+                        <p>App concept that helps people wash clothes with less microplastic pollution. From survey and personas to a tested Figma prototype.</p>
+                        <ul class="teknologier">
+                            <li><i class="fa-solid fa-pen-ruler"></i> Figma</li>
+                            <li><i class="fa-solid fa-leaf"></i> UN SDG 6</li>
+                            <li><i class="fa-solid fa-hand"></i> Usability testing</li>
+                        </ul>
+                        <a href="greenclean.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    <article>
+                        <a href="city-break.html"><img src="bilder/citybreak-landingsside.jpg" alt="Landingssiden for kampanjen City Break Barcelona" class="prosjekt-bilde"></a>
+                        <p class="etikett">Digital marketing</p>
+                        <h3><a href="city-break.html">City Break Barcelona</a></h3>
+                        <p>Campaign plan for a weekend-trip offer aimed at young adults: personas, customer journey, ads for five channels and a landing page.</p>
+                        <ul class="teknologier">
+                            <li><i class="fa-solid fa-bullhorn"></i> Campaign</li>
+                            <li><i class="fa-brands fa-instagram"></i> Social ads</li>
+                            <li><i class="fa-brands fa-html5"></i> Landing page</li>
+                        </ul>
+                        <a href="city-break.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    <article>
+                        <a href="quiz-krav.html"><img src="bilder/krav-gherkin.png" alt="Gherkin-scenarioer for et quizsystem" class="prosjekt-bilde hvit"></a>
+                        <p class="etikett">Requirements</p>
+                        <h3><a href="quiz-krav.html">Quiz System Requirements</a></h3>
+                        <p>A lecturer's wishes turned into 20 numbered requirements, 15 user stories and 19 BDD scenarios, traceable from need to test.</p>
+                        <ul class="teknologier">
+                            <li><i class="fa-solid fa-list-check"></i> User stories</li>
+                            <li><i class="fa-solid fa-vial"></i> BDD / Gherkin</li>
+                            <li><i class="fa-solid fa-diagram-project"></i> Traceability</li>
+                        </ul>
+                        <a href="quiz-krav.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                </div>
+                        </section>
+
+<!--Kommende: bacheloroppgave-->
+            <section id="bachelor">
+                <p class="etikett">Up next · Spring 2027</p>
+                <h2>Bachelor thesis with Omda</h2>
+                <p class="ingress">AI speech-to-text and real-time documentation for out-of-hours emergency call centres.</p>
+                <div class="to-kolonner">
+                    <p>Operators at emergency call centres have to listen, assess and write notes at the same time, often under heavy pressure. Our team of four will test Norwegian speech-to-text models that can run locally, since patient calls cannot be processed in the cloud. The goal is a prototype that fills in the fields of the operator's checklist as the call goes on, so the operator only confirms or corrects.</p>
+                    <ul class="punkter">
+                        <li>Evaluate local speech-to-text models on simulated calls with dialects and medical terms</li>
+                        <li>Structure the text in real time instead of writing a summary afterwards</li>
+                        <li>Design how the operator works with AI-generated text during the call</li>
+                        <li>My background as a dental health secretary helps with medical terms and documentation under time pressure</li>
+                    </ul>
+                </div>
+            </section>
+
+<!--Ferdigheter-->
+            <section id="ferdigheter">
+                <h2>Technical skills</h2>
+                <div class="ferdighet-grupper">
+                    <article>
+                        <h3><i class="fa-solid fa-code"></i> Programming &amp; fullstack</h3>
+                        <ul>
+                            <li><i class="fa-brands fa-java"></i> Java</li>
+                            <li><i class="fa-brands fa-python"></i> Python</li>
+                            <li><i class="fa-brands fa-node-js"></i> Node.js</li>
+                            <li><i class="fa-brands fa-angular"></i> Angular</li>
+                            <li><i class="fa-solid fa-leaf"></i> Spring Boot</li>
+                            <li>Fastify</li>
+                            <li>Javalin</li>
+                            <li>Maven</li>
+                            <li>Jupyter</li>
+                            <li>MQTT &amp; JSON</li>
+                            <li><i class="fa-brands fa-html5"></i> HTML</li>
+                            <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+                            <li>REST APIs</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3><i class="fa-solid fa-database"></i> Databases</h3>
+                        <ul>
+                            <li>PostgreSQL</li>
+                            <li>MySQL</li>
+                            <li>SQL</li>
+                            <li>Normalisation &amp; ER modelling</li>
+                            <li>JPA / Hibernate</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3><i class="fa-solid fa-cloud"></i> DevOps &amp; cloud</h3>
+                        <ul>
+                            <li><i class="fa-brands fa-git-alt"></i> Git</li>
+                            <li><i class="fa-brands fa-github"></i> GitHub Actions</li>
+                            <li><i class="fa-brands fa-jenkins"></i> Jenkins</li>
+                            <li><i class="fa-brands fa-docker"></i> Docker</li>
+                            <li><i class="fa-brands fa-aws"></i> AWS EC2 &amp; RDS</li>
+                            <li>Blue/green deployment</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3><i class="fa-solid fa-vial"></i> Testing &amp; quality</h3>
+                        <ul>
+                            <li>JUnit &amp; Mockito</li>
+                            <li>Jest</li>
+                            <li>k6</li>
+                            <li>SonarQube</li>
+                            <li>Snyk</li>
+                            <li>BDD &amp; Gherkin</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3><i class="fa-solid fa-shield-halved"></i> Security</h3>
+                        <ul>
+                            <li>OPNsense firewall</li>
+                            <li>OpenVPN, IPsec &amp; WireGuard</li>
+                            <li>VLAN segmentation</li>
+                            <li>WPA2-Enterprise &amp; FreeRADIUS</li>
+                            <li>Suricata IDS/IPS</li>
+                            <li><i class="fa-brands fa-linux"></i> Linux hardening (SSH, nftables, fail2ban, Lynis)</li>
+                            <li>SELinux &amp; AppArmor</li>
+                            <li><i class="fa-brands fa-windows"></i> Windows Server &amp; BitLocker</li>
+                            <li>Active Directory &amp; IAM</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3><i class="fa-solid fa-pen-ruler"></i> Design &amp; business</h3>
+                        <ul>
+                            <li>Figma</li>
+                            <li>Usability testing</li>
+                            <li>Accessibility (WCAG)</li>
+                            <li>Requirements engineering</li>
+                            <li>User stories</li>
+                            <li>Project planning (WBS, Gantt, risk)</li>
+                            <li>Digital marketing</li>
+                            <li>Generative AI</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+<!--Utdanning og erfaring-->
+            <section id="erfaring">
+                <div class="utdanning">
+                    <h2>Education</h2>
+                    <article>
+                        <h3>Østfold University College (HiØ)</h3>
+                        <p class="dato">2024 – 2027</p>
+                        <p>Bachelor in Information Systems, specialising in Software Engineering</p>
+                        <ul class="emner">
+                            <li><span class="emne-ar">Year 1</span> Programming 1 (Python), Programming 2 (Java), Web Development, Database Systems, Introduction to Data Security, Design of Digital Products, UI Design Project, Introduction to Generative AI</li>
+                            <li><span class="emne-ar">Year 2</span> Digital Marketing, Project Management, exchange semester in Vienna</li>
+                            <li><span class="emne-ar">Year 3</span> Business Intelligence, Big Data, Information Security, Digitalisation Strategy and bachelor thesis with Omda <em>(in progress)</em></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>UAS Technikum Wien (Exchange)</h3>
+                        <p class="dato">Jan 2026 – Jul 2026</p>
+                        <ul class="punkter">
+                            <li>Software Engineering 2 Laboratory</li>
+                            <li>Continuous Integration</li>
+                            <li>Applied Computer Science</li>
+                            <li>Network Security</li>
+                            <li>System Hardening</li>
+                            <li>Requirements Engineering</li>
+                            <li>German Language &amp; Austrian Culture A1</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Malakoff Upper Secondary School</h3>
+                        <p class="dato">2022 – 2023</p>
+                        <p>Authorised dental health secretary</p>
+                    </article>
+                </div>
+                <div class="jobb">
+                    <h2>Work experience</h2>
+                    <ul class="tidslinje">
+                        <li><h3>Colosseum Tannlege &amp; Storbyen Tannklinikk</h3><p class="dato">2022 – 2025</p><p>Dental health secretary (on call and substitute). Received patients, assisted the dentist during treatment and kept the clinic sterile.</p></li>
+                        <li><h3>Gina Tricot</h3><p class="dato">2023 – 2025</p><p>Sales associate</p></li>
+                        <li><h3>Extra Manstad</h3><p class="dato">2022 – 2023</p><p>Store associate with responsibility for locking up</p></li>
+                        <li><h3>Telia Storbyen</h3><p class="dato">2020 – 2022</p><p>Shop assistant responsible for sales, daily routines and cash settlement. In my last year I took on extra responsibility for routines, sales and motivating colleagues, on my own initiative.</p></li>
+                        <li><h3>Kiwi Råbekken</h3><p class="dato">2019 – 2020</p><p>Store associate</p></li>
+                    </ul>
+                </div>
+            </section>
+
+<!--Om denne siden-->
+            <section id="om-siden">
+                <h2>About this site</h2>
+                <p>Built by hand in plain HTML and CSS, mobile first, without frameworks. Every change runs through a pipeline in GitHub Actions that validates the HTML, checks every link and tests all pages against WCAG 2 level AA. The site is only published when all tests pass.</p>
+                <p>The first accessibility test found 74 errors, mostly orange text with too little contrast. Fixing them is why links on this site are a darker orange.</p>
+                <ul class="teknologier">
+                    <li><i class="fa-brands fa-html5"></i> HTML</li>
+                    <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+                    <li><i class="fa-brands fa-github"></i> GitHub Actions</li>
+                    <li>html-validate</li>
+                    <li>linkinator</li>
+                    <li>pa11y &amp; axe</li>
+                </ul>
+                <a href="https://github.com/iselinmag/iselinmag.github.io" class="lenke">Se koden og pipelinen på GitHub <i class="fa-solid fa-arrow-right"></i></a>
+            </section>
+        </main>
+
+<!--Kontakt-->
+        <footer id="kontakt">
+            <h2>Let's connect</h2>
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:iselinsophie99@outlook.com">iselinsophie99@outlook.com</a></li>
+                <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/iselinmagnussen">/iselinmagnussen</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/iselinmag">/iselinmag</a></li>
+            </ul>
+            <p class="copyright">© 2026 Iselin Magnussen</p>
+        </footer>
+
+    </div>
+</body>
+</html>

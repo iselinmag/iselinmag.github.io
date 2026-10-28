@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="ikoner/css/fontawesome.css" rel="stylesheet">
+    <link href="ikoner/css/brands.css" rel="stylesheet">
+    <link href="ikoner/css/solid.css" rel="stylesheet">
+    <link href="ikoner/css/regular.css" rel="stylesheet">
+    <title>Campus Lost &amp; Found API – Iselin Magnussen</title>
+</head>
+
+<body>
+    <div id="grid-container">
+
+<!--Toppmeny-->
+        <header>
+            <a href="index.html" class="logo">Iselin Magnussen</a>
+            <nav class="nav-liste">
+                <ul>
+                    <li><a href="index.html#om-meg">Om meg</a></li>
+                    <li><a href="index.html#prosjekter">Prosjekter</a></li>
+                    <li><a href="index.html#ferdigheter">Ferdigheter</a></li>
+                    <li><a href="index.html#erfaring">Erfaring</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="prosjektside">
+<!--Brødsmuler-->
+            <ol class="brodsmule">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="index.html#prosjekter">Prosjekter</a></li>
+                <li>Campus Lost &amp; Found API</li>
+            </ol>
+
+<!--Topp-->
+            <section class="prosjekt-topp">
+                <div class="prosjekt-intro">
+                    <p class="etikett">Backend &amp; DevOps · Soloprosjekt</p>
+                    <h1>Campus Lost &amp; Found API</h1>
+                    <p class="ingress">A REST API for a university's lost-and-found service, with a full CI/CD pipeline that tests, scans, builds and deploys every release to AWS using blue/green deployment.</p>
+                    <ul class="fakta">
+                        <li><strong>Team</strong> Solo project</li>
+                        <li><strong>Course</strong> Continuous Integration, UAS Technikum Wien</li>
+                        <li><strong>Result</strong> Zero downtime during release</li>
+                    </ul>
+                    <div class="knapper">
+                        <a href="https://github.com/iselinmag/campus-lost-and-found-api" class="knapp mork"><i class="fa-brands fa-github"></i> Se koden på GitHub</a>
+                    </div>
+                </div>
+                <ul class="nokkeltall">
+                    <li><strong>20/20</strong> unit tests passing</li>
+                    <li><strong>86%</strong> test coverage</li>
+                    <li><strong>4.33 ms</strong> p95 response time under load</li>
+                    <li><strong>0</strong> known vulnerable dependencies</li>
+                </ul>
+            </section>
+
+<!--Oppgaven-->
+            <section class="prosjekt-blokk">
+                <h2>The assignment</h2>
+                <p class="under">Build the backend for a campus lost-and-found service and practise DevOps: a cloud-hosted pipeline with at least five stages, code quality and security scanning, feature toggles, and blue/green deployment on AWS.</p>
+                <ul class="krav">
+                    <li><i class="fa-solid fa-check"></i> Public read, write protected by a hashed API key</li>
+                    <li><i class="fa-solid fa-check"></i> Paginated list with full-text search and sorting</li>
+                    <li><i class="fa-solid fa-check"></i> Feature toggle in PostHog, no redeploy needed</li>
+                    <li><i class="fa-solid fa-check"></i> SonarQube self-hosted on AWS, Snyk security scans</li>
+                    <li><i class="fa-solid fa-check"></i> Docker images pushed to Docker Hub</li>
+                    <li><i class="fa-solid fa-check"></i> Blue/green deployment on EC2 with RDS PostgreSQL</li>
+                    <li><i class="fa-solid fa-check"></i> k6 load test on staging before the traffic switch</li>
+                    <li><i class="fa-solid fa-check"></i> Failed stages stop the pipeline and send an email</li>
+                </ul>
+            </section>
+
+<!--Funksjoner-->
+            <section class="prosjekt-blokk">
+                <h2>What it does</h2>
+                <ul class="punkt-kort">
+                    <li><i class="fa-solid fa-key"></i><h3>API key access</h3><p>Creating, updating and deleting items needs a key. Keys are stored as SHA-256 hashes and can be rotated.</p></li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i><h3>Public search</h3><p>Anyone can list items with pagination, newest or oldest first, and PostgreSQL full-text search.</p></li>
+                    <li><i class="fa-solid fa-toggle-on"></i><h3>Feature toggle</h3><p>Full-text search can be switched off in PostHog and the running server follows straight away.</p></li>
+                    <li><i class="fa-solid fa-shield-halved"></i><h3>Safe releases</h3><p>A new version is tested on the idle environment before NGINX moves traffic to it.</p></li>
+                </ul>
+            </section>
+
+<!--Pipeline-->
+            <section class="prosjekt-blokk">
+                <h2>The pipeline</h2>
+                <p class="under">GitHub Actions. A push to main runs the first three stages; a push to deploy/production runs all of them.</p>
+                <ol class="pipeline">
+                    <li><strong>Quality &amp; security</strong> SonarQube, Snyk</li>
+                    <li><strong>Test</strong> Jest with coverage</li>
+                    <li><strong>Build</strong> Docker image</li>
+                    <li><strong>Deliver</strong> Push to Docker Hub</li>
+                    <li><strong>Deploy</strong> To the idle environment</li>
+                    <li><strong>Load test</strong> k6 on staging</li>
+                    <li><strong>Switch</strong> Blue/green traffic</li>
+                </ol>
+                <figure class="skjermbilde">
+                    <img src="bilder/lostfound-pipeline.png" alt="GitHub Actions-kjøring der alle sju stegene er grønne, fra Quality &amp; Security til Blue Green Traffic Switch">
+                    <figcaption>A full deploy/production run in GitHub Actions, all stages green in 3 min 36 s.</figcaption>
+                </figure>
+            </section>
+
+<!--Teknisk-->
+            <section class="prosjekt-blokk">
+                <h2>How it is built</h2>
+                <div class="to-kolonner">
+                    <article>
+                        <h3><i class="fa-brands fa-node-js"></i> Application</h3>
+                        <ul class="punkter">
+                            <li>Node.js 22 and Fastify 5</li>
+                            <li>PostgreSQL full-text search with to_tsvector and plainto_tsquery</li>
+                            <li>Jest tests that simulate requests without a real server or database</li>
+                            <li>Config through environment variables, secrets in GitHub</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3><i class="fa-brands fa-aws"></i> Infrastructure</h3>
+                        <ul class="punkter">
+                            <li>Blue and green Fastify containers on one EC2 instance</li>
+                            <li>NGINX in front decides which one gets traffic</li>
+                            <li>AWS RDS PostgreSQL, only reachable from the app's security group</li>
+                            <li>Automatic rollback if the new NGINX config fails</li>
+                        </ul>
+                    </article>
+                </div>
+                <ul class="teknologier stor">
+                    <li>Node.js</li><li>Fastify</li><li>PostgreSQL</li><li>Docker</li><li>NGINX</li><li>AWS EC2</li><li>AWS RDS</li><li>GitHub Actions</li><li>Jest</li><li>k6</li><li>SonarQube</li><li>Snyk</li><li>PostHog</li>
+                </ul>
+            </section>
+
+<!--Resultater-->
+            <section class="prosjekt-blokk">
+                <h2>Proof it works</h2>
+                <div class="skisser">
+                    <figure>
+                        <img src="bilder/lostfound-sonarqube.png" alt="SonarQube-oversikt: Quality Gate bestått, 80,9 % dekning og 0,0 % duplisert kode">
+                        <figcaption>SonarQube: Quality Gate passed, 0.0% duplicated code.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="bilder/lostfound-zero-downtime.png" alt="To terminaler: til venstre svarer hver forespørsel med HTTP 200, til høyre bytter switch.sh trafikken fra blue til green">
+                        <figcaption>Requests kept returning HTTP 200 while traffic switched from blue to green.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <a href="index.html#prosjekter" class="lenke tilbake"><i class="fa-solid fa-arrow-left"></i> Tilbake til alle prosjekter</a>
+        </main>
+
+<!--Kontakt-->
+        <footer id="kontakt">
+            <h2>Let's connect</h2>
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:iselinsophie99@outlook.com">iselinsophie99@outlook.com</a></li>
+                <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/iselinmagnussen">/iselinmagnussen</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/iselinmag">/iselinmag</a></li>
+            </ul>
+            <p class="copyright">© 2026 Iselin Magnussen</p>
+        </footer>
+
+    </div>
+</body>
+</html>

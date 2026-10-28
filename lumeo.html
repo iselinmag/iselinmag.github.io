@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="ikoner/css/fontawesome.css" rel="stylesheet">
+    <link href="ikoner/css/brands.css" rel="stylesheet">
+    <link href="ikoner/css/solid.css" rel="stylesheet">
+    <link href="ikoner/css/regular.css" rel="stylesheet">
+    <title>Lumeo – Iselin Magnussen</title>
+</head>
+
+<body>
+    <div id="grid-container">
+
+<!--Toppmeny-->
+        <header>
+            <a href="index.html" class="logo">Iselin Magnussen</a>
+            <nav class="nav-liste">
+                <ul>
+                    <li><a href="index.html#om-meg">Om meg</a></li>
+                    <li><a href="index.html#prosjekter">Prosjekter</a></li>
+                    <li><a href="index.html#ferdigheter">Ferdigheter</a></li>
+                    <li><a href="index.html#erfaring">Erfaring</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="prosjektside">
+<!--Brødsmuler-->
+            <ol class="brodsmule">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="index.html#prosjekter">Prosjekter</a></li>
+                <li>Lumeo</li>
+            </ol>
+
+<!--Topp-->
+            <section class="prosjekt-topp">
+                <div class="prosjekt-intro">
+                    <p class="etikett">UI/UX · Prototyping</p>
+                    <h1>Lumeo</h1>
+                    <p class="ingress">A wearable that guides people around Campus Remmen with light, sound and vibration. Designed for new students, visitors and people with impaired sight or hearing.</p>
+                    <ul class="fakta">
+                        <li><strong>Role</strong> Project leader in a team of 4</li>
+                        <li><strong>Course</strong> UI Design Project (ITM21922), Østfold University College</li>
+                        <li><strong>When</strong> Spring 2025</li>
+                    </ul>
+                </div>
+                <img src="bilder/lumeo-prototype.jpg" alt="Prototypen av Lumeo: en blå 3D-printet klokke med Micro:bit og ledninger" class="prosjekt-foto">
+            </section>
+
+<!--Problemet-->
+            <section class="prosjekt-blokk">
+                <h2>The problem</h2>
+                <p class="under">Campus Remmen is large and spread out, with several floors and entrances that are not always well signposted. There was no digital indoor navigation, only static maps and help from reception.</p>
+                <ul class="krav">
+                    <li><i class="fa-solid fa-circle-question"></i> Hard to find rooms, especially for new students</li>
+                    <li><i class="fa-solid fa-circle-question"></i> Confusing maps and signs</li>
+                    <li><i class="fa-solid fa-circle-question"></i> Extra difficult for people with disabilities</li>
+                    <li><i class="fa-solid fa-circle-question"></i> Little use of technology in today's solution</li>
+                </ul>
+            </section>
+
+<!--Prosess-->
+            <section class="prosjekt-blokk">
+                <h2>How we worked</h2>
+                <p class="under">Design Thinking, run in short sprints from February to May.</p>
+                <ol class="pipeline fem">
+                    <li><strong>Empathize</strong> Interviews and a survey with students</li>
+                    <li><strong>Define</strong> Problem statements from the insight</li>
+                    <li><strong>Ideate</strong> An idea bank of concepts</li>
+                    <li><strong>Prototype</strong> Micro:bit, 3D print and Figma screens</li>
+                    <li><strong>Test</strong> Usability tests and A/B tests</li>
+                </ol>
+            </section>
+
+<!--Løsningen-->
+            <section class="prosjekt-blokk">
+                <h2>The prototype</h2>
+                <div class="to-kolonner">
+                    <ul class="punkt-kort to">
+                        <li><i class="fa-solid fa-lightbulb"></i><h3>Light</h3><p>The LED display shows messages and room numbers, and arrows when you move your wrist.</p></li>
+                        <li><i class="fa-solid fa-volume-high"></i><h3>Sound</h3><p>A short melody plays when a message has finished showing.</p></li>
+                        <li><i class="fa-solid fa-hand"></i><h3>Vibration</h3><p>A motor under the watch gives direction through patterns you can feel.</p></li>
+                        <li><i class="fa-solid fa-mobile-screen"></i><h3>Screens</h3><p>Figma screens for choosing a room, quick menu and directions.</p></li>
+                    </ul>
+                    <figure class="skjermbilde">
+                        <video src="bilder/lumeo-3d.mp4" poster="bilder/lumeo-3d.jpg" controls muted loop playsinline aria-label="3D-animasjon av Lumeo-klokken som roterer"><track kind="captions" src="filer/teksting/lumeo-3d.vtt" srclang="nb" label="Norsk"></video>
+                        <figcaption>3D animation of how the finished watch could look.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+<!--Testing-->
+            <section class="prosjekt-blokk">
+                <h2>What testing showed</h2>
+                <p class="under">We tested with 3–5 students from each of the other groups, at two stations: one for the screens and one for the vibration patterns. A second test used a blindfold and noise-cancelling headphones to simulate a visually impaired user.</p>
+                <div class="to-kolonner">
+                    <article>
+                        <h3>Screens</h3>
+                        <ul class="maler">
+                            <li><span>Quick menu (toilet, canteen, library)</span><strong>100%</strong></li>
+                            <li><span>Direction arrows</span><strong>87%</strong></li>
+                            <li><span>"Outside the zone" screen</span><strong>80%</strong></li>
+                            <li><span>Add classroom</span><strong>67%</strong></li>
+                            <li><span>Type in classroom</span><strong>67%</strong></li>
+                        </ul>
+                        <p class="liten">Share of test users who understood each screen.</p>
+                    </article>
+                    <article>
+                        <h3>Vibration patterns (A/B test)</h3>
+                        <p>Both patterns had a 75% success rate. Pattern 1 (short for left/right, long for forward/back) felt easier, because pattern 2 made people count vibrations.</p>
+                        <h3 class="mellomrom">Changes after testing</h3>
+                        <ul class="punkter">
+                            <li>Went with vibration pattern 1</li>
+                            <li>Map symbol instead of a plus icon</li>
+                            <li>Clear back and delete buttons</li>
+                            <li>Arrows with text, and instructions on error screens</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+<!--Expo-->
+            <section class="prosjekt-blokk">
+                <h2>At the expo</h2>
+                <p class="under">We presented Lumeo with a poster, a brochure and the working prototype.</p>
+                <div class="galleri">
+                    <img src="bilder/lumeo-plakat.jpg" alt="Lumeo-plakaten på standen">
+                    <img src="bilder/lumeo-stand.jpg" alt="Standen med skjerm, plakat og prototype">
+                    <img src="bilder/lumeo-bord.jpg" alt="Bordet med prototypen, brosjyrer og et nettbrett">
+                </div>
+                <figure class="skjermbilde brosjyre">
+                    <img src="bilder/lumeo-brosjyre-2.jpg" alt="Innsiden av brosjyren: utfordringer, løsningen og resultater fra brukertesting">
+                    <figcaption>The brochure we handed out.</figcaption>
+                </figure>
+            </section>
+
+<!--Mitt bidrag-->
+            <section class="prosjekt-blokk">
+                <h2>My part</h2>
+                <p>I was the project leader. That meant:</p>
+                <ul class="punkter">
+                    <li>Keeping track of progress and making the roles in the group fit together</li>
+                    <li>Main responsibility for the report and the deadlines</li>
+                    <li>Being the main contact for our supervisor and the stakeholder</li>
+                </ul>
+            </section>
+
+<!--Læring-->
+            <section class="prosjekt-blokk bidrag">
+                <h2>What I learned</h2>
+                <ul class="punkter">
+                    <li>Simple symbols and clear feedback matter more than clever features</li>
+                    <li>Test the solution, not the user: open questions and neutral observation</li>
+                    <li>Involve the real target group, like visually impaired users, as early as possible</li>
+                    <li>Cheap tools like Micro:bit make it fast to change a prototype after feedback</li>
+                </ul>
+            </section>
+
+            <a href="index.html#prosjekter" class="lenke tilbake"><i class="fa-solid fa-arrow-left"></i> Tilbake til alle prosjekter</a>
+        </main>
+
+<!--Kontakt-->
+        <footer id="kontakt">
+            <h2>Let's connect</h2>
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:iselinsophie99@outlook.com">iselinsophie99@outlook.com</a></li>
+                <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/iselinmagnussen">/iselinmagnussen</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/iselinmag">/iselinmag</a></li>
+            </ul>
+            <p class="copyright">© 2026 Iselin Magnussen</p>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "runners": [
+      "axe",
+      "htmlcs"
+    ],
+    "timeout": 60000,
+    "chromeLaunchConfig": {
+      "args": [
+        "--no-sandbox"
+      ]
+    }
+  },
+  "urls": [
+    "http://localhost:8080/index.html",
+    "http://localhost:8080/city-break.html",
+    "http://localhost:8080/greenclean.html",
+    "http://localhost:8080/lost-and-found.html",
+    "http://localhost:8080/lumeo.html",
+    "http://localhost:8080/nettbutikk.html",
+    "http://localhost:8080/quiz-krav.html",
+    "http://localhost:8080/skismoring.html",
+    "http://localhost:8080/tourplanner.html"
+  ]
+}

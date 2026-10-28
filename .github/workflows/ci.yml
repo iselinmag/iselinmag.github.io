@@ -1,0 +1,75 @@
+# Test og publisering av porteføljen.
+# Hver push og pull request kjører testene. Push til main publiserer siden,
+# men bare hvis alle testene er grønne.
+name: Test og publiser
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  test:
+    name: Test (HTML, lenker, WCAG)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installer testverktøy
+        run: npm ci
+
+      - name: Valider HTML
+        run: npm run test:html
+
+      - name: Sjekk lenker
+        run: npm run test:links
+
+      - name: Start lokal server
+        run: python3 -m http.server 8080 &
+
+      - name: Test universell utforming (WCAG 2 AA)
+        run: npm run test:a11y
+
+  deploy:
+    name: Publiser til GitHub Pages
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Lag mappe med bare filene som skal publiseres
+        run: |
+          mkdir _site
+          rsync -a --exclude '.git' --exclude '.github' --exclude 'node_modules' \
+            --exclude '_site' --exclude 'package*.json' --exclude '.pa11yci' \
+            --exclude '.htmlvalidate.json' --exclude 'linkinator.config.json' \
+            --exclude 'README.md' --exclude '.gitignore' ./ _site/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

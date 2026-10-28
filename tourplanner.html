@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="ikoner/css/fontawesome.css" rel="stylesheet">
+    <link href="ikoner/css/brands.css" rel="stylesheet">
+    <link href="ikoner/css/solid.css" rel="stylesheet">
+    <link href="ikoner/css/regular.css" rel="stylesheet">
+    <title>TourPlanner – Iselin Magnussen</title>
+</head>
+
+<body>
+    <div id="grid-container">
+
+<!--Toppmeny-->
+        <header>
+            <a href="index.html" class="logo">Iselin Magnussen</a>
+            <nav class="nav-liste">
+                <ul>
+                    <li><a href="index.html#om-meg">Om meg</a></li>
+                    <li><a href="index.html#prosjekter">Prosjekter</a></li>
+                    <li><a href="index.html#ferdigheter">Ferdigheter</a></li>
+                    <li><a href="index.html#erfaring">Erfaring</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="prosjektside">
+<!--Brødsmuler-->
+            <ol class="brodsmule">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="index.html#prosjekter">Prosjekter</a></li>
+                <li>TourPlanner</li>
+            </ol>
+
+<!--Topp-->
+            <section class="prosjekt-topp">
+                <div class="prosjekt-intro">
+                    <p class="etikett">Fullstack · Semesterprosjekt</p>
+                    <h1>TourPlanner</h1>
+                    <p class="ingress">A web app for planning tours and keeping logs of the trips you have done. Create a tour between two places, see the route drawn on a map, and write logs with rating, difficulty and a photo.</p>
+                    <ul class="fakta">
+                        <li><strong>Team</strong> 2 students (with Matej Krsteski)</li>
+                        <li><strong>Course</strong> Software Engineering, UAS Technikum Wien</li>
+                        <li><strong>Tests</strong> 35 backend unit tests</li>
+                    </ul>
+                    <div class="knapper">
+                        <a href="https://github.com/iselinmag/SoftwareEngineering-TourPlanner" class="knapp mork"><i class="fa-brands fa-github"></i> Se koden på GitHub</a>
+                    </div>
+                </div>
+                <img src="bilder/tourplanner-tur.png" alt="Illustrasjon av en fotturist i fjellet" class="prosjekt-illustrasjon">
+            </section>
+
+<!--Oppgaven-->
+            <section class="prosjekt-blokk">
+                <h2>The assignment</h2>
+                <p class="under">Build a two-tier tour planner in a team of two, with Angular in the frontend and Spring Boot or ASP.NET in the backend. All must-have requirements were met, plus our own unique feature.</p>
+                <ul class="krav">
+                    <li><i class="fa-solid fa-check"></i> Layered architecture (presentation, business, data access)</li>
+                    <li><i class="fa-solid fa-check"></i> MVVM in Angular and a reusable UI component</li>
+                    <li><i class="fa-solid fa-check"></i> PostgreSQL through an O/R mapper, images on the file system</li>
+                    <li><i class="fa-solid fa-check"></i> OpenRouteService and Leaflet integration</li>
+                    <li><i class="fa-solid fa-check"></i> Logging with Log4j2 and config kept out of the code</li>
+                    <li><i class="fa-solid fa-check"></i> 20+ unit tests (we wrote 35)</li>
+                    <li><i class="fa-solid fa-check"></i> Documented with UML diagrams and wireframes</li>
+                    <li><i class="fa-solid fa-star"></i> Unique feature: per-tour image gallery</li>
+                </ul>
+            </section>
+
+<!--Funksjoner-->
+            <section class="prosjekt-blokk">
+                <h2>What it does</h2>
+                <ul class="punkt-kort">
+                    <li><i class="fa-solid fa-route"></i><h3>Real routes</h3><p>Distance and travel time come from OpenRouteService, and the route is drawn on a Leaflet map.</p></li>
+                    <li><i class="fa-solid fa-book-open"></i><h3>Tour logs</h3><p>Each log has date, comment, difficulty, distance, time, a 1–5 rating and one photo.</p></li>
+                    <li><i class="fa-solid fa-images"></i><h3>Image gallery</h3><p>Photos from all logs on a tour are gathered in one gallery you can flip through.</p></li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i><h3>Search &amp; export</h3><p>Full-text search across tours and logs, plus JSON import and export.</p></li>
+                </ul>
+            </section>
+
+<!--Teknisk-->
+            <section class="prosjekt-blokk">
+                <h2>How it is built</h2>
+                <div class="to-kolonner">
+                    <article>
+                        <h3><i class="fa-brands fa-java"></i> Backend</h3>
+                        <ul class="punkter">
+                            <li>Java 21 and Spring Boot, split into controller, service and repository layers</li>
+                            <li>PostgreSQL with Spring Data JPA and Hibernate</li>
+                            <li>Login with Spring Security and JWT tokens</li>
+                            <li>Bean Validation on all input, logging with Log4j2</li>
+                            <li>Unit tests with JUnit and Mockito, no database needed</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3><i class="fa-brands fa-angular"></i> Frontend</h3>
+                        <ul class="punkter">
+                            <li>Angular with standalone components</li>
+                            <li>MVVM: signal-based ViewModels hold the state</li>
+                            <li>Leaflet hidden behind a Facade service</li>
+                            <li>Interceptors send the token and handle errors</li>
+                        </ul>
+                    </article>
+                </div>
+                <ul class="teknologier stor">
+                    <li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>JPA / Hibernate</li><li>JWT</li><li>Angular</li><li>Leaflet</li><li>OpenRouteService</li><li>JUnit</li><li>Mockito</li>
+                </ul>
+            </section>
+
+<!--Mitt bidrag-->
+            <section class="prosjekt-blokk bidrag">
+                <h2>My part</h2>
+                <p>We split the work between us. My main areas were:</p>
+                <ul class="punkter">
+                    <li>Frontend screens and ViewModels</li>
+                    <li>Writing the backend unit tests</li>
+                    <li>Full-text search, JSON import/export and the computed values for popularity and child-friendliness</li>
+                    <li>Project setup and planning</li>
+                </ul>
+            </section>
+
+<!--Skisser-->
+            <section class="prosjekt-blokk">
+                <h2>From sketch to app</h2>
+                <p class="under">We started with hand-drawn sketches for desktop and mobile, then made a wireframe of the main screen.</p>
+                <div class="skisser">
+                    <figure>
+                        <img src="bilder/tourplanner-skisse-pc.png" alt="Håndtegnet skisse av PC-visningen med søk, rute-liste og kart">
+                        <figcaption>Desktop sketch</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="bilder/tourplanner-skisse-mobil.png" alt="Håndtegnet skisse av mobilvisningen med liste og kart">
+                        <figcaption>Mobile sketch</figcaption>
+                    </figure>
+                    <figure class="bred">
+                        <img src="bilder/tourplanner-wireframe.png" alt="Wireframe av hovedskjermen med turliste, kart, turdetaljer, logger og bildegalleri">
+                        <figcaption>Wireframe of the main screen</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <a href="index.html#prosjekter" class="lenke tilbake"><i class="fa-solid fa-arrow-left"></i> Tilbake til alle prosjekter</a>
+        </main>
+
+<!--Kontakt-->
+        <footer id="kontakt">
+            <h2>Let's connect</h2>
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:iselinsophie99@outlook.com">iselinsophie99@outlook.com</a></li>
+                <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/iselinmagnussen">/iselinmagnussen</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/iselinmag">/iselinmag</a></li>
+            </ul>
+            <p class="copyright">© 2026 Iselin Magnussen</p>
+        </footer>
+
+    </div>
+</body>
+</html>
