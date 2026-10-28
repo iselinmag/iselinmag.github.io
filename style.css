@@ -1144,6 +1144,10 @@ footer i {
     .ferdighet-grupper {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    #om-meg {
+        grid-template-rows: auto;
+    }
 }
 
 /*BACHELOROPPGAVE (forsiden)*/
