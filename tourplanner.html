@@ -20,7 +20,6 @@
             <nav class="nav-liste">
                 <ul>
                     <li><a href="index.html#prosjekter">Projects</a></li>
-                    <li><a href="index.html#utfordringer">Challenges</a></li>
                     <li><a href="index.html#om-meg">About</a></li>
                     <li><a href="index.html#ferdigheter">Skills</a></li>
                     <li><a href="index.html#erfaring">Experience</a></li>
@@ -140,6 +139,24 @@
                         <img src="bilder/tourplanner-wireframe.png" alt="Wireframe of the main screen with tour list, map, tour details, logs and image gallery">
                         <figcaption>Wireframe of the main screen</figcaption>
                     </figure>
+                </div>
+            </section>
+
+            <!--Utfordring-->
+            <section class="prosjekt-blokk" id="challenges">
+                <h2>Challenges &amp; what I learned</h2>
+                <div class="utfordring-liste en">
+                    <article>
+                        <h3>Searching for values that are not in the database</h3>
+                        <dl>
+                            <dt>Problem</dt>
+                            <dd>Tours have a popularity and a child-friendliness rating, worked out from the logs each time. Since they are never stored, a database query can't search them, so searching for "child-friendly" found nothing.</dd>
+                            <dt>What I chose</dt>
+                            <dd>Search in two passes. First a JPQL query over stored fields and log comments, then a filter in the service layer over the computed labels, merging the results without duplicates.</dd>
+                            <dt>Why</dt>
+                            <dd>Storing the values would mean keeping them in sync every time a log changes. Computing them on request keeps one source of truth, at the cost of a little more work per search.</dd>
+                        </dl>
+                    </article>
                 </div>
             </section>
 

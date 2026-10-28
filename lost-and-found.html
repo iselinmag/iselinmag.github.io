@@ -20,7 +20,6 @@
             <nav class="nav-liste">
                 <ul>
                     <li><a href="index.html#prosjekter">Projects</a></li>
-                    <li><a href="index.html#utfordringer">Challenges</a></li>
                     <li><a href="index.html#om-meg">About</a></li>
                     <li><a href="index.html#ferdigheter">Skills</a></li>
                     <li><a href="index.html#erfaring">Experience</a></li>
@@ -146,6 +145,24 @@
                         <img src="bilder/lostfound-zero-downtime.png" alt="Two terminals: on the left every request returns HTTP 200, on the right switch.sh moves traffic from blue to green">
                         <figcaption>Requests kept returning HTTP 200 while traffic switched from blue to green.</figcaption>
                     </figure>
+                </div>
+            </section>
+
+            <!--Utfordring-->
+            <section class="prosjekt-blokk" id="challenges">
+                <h2>Challenges &amp; what I learned</h2>
+                <div class="utfordring-liste en">
+                    <article>
+                        <h3>Releasing a new version without taking the API down</h3>
+                        <dl>
+                            <dt>Problem</dt>
+                            <dd>A normal redeploy stops the running container, so every request during the restart fails.</dd>
+                            <dt>What I chose</dt>
+                            <dd>Two containers, blue and green, behind NGINX. The pipeline deploys to the idle one, waits for its health check and runs a k6 load test against it. Only then does a script point NGINX at it and reload.</dd>
+                            <dt>Why</dt>
+                            <dd>The live version keeps serving traffic the whole time. The script validates the new NGINX config first and restores the old one if it fails, and the old container stays up as a fallback. While switching, a client sent requests nonstop, and every one returned HTTP 200.</dd>
+                        </dl>
+                    </article>
                 </div>
             </section>
 

@@ -1421,3 +1421,31 @@ footer i {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/*LITEN KNAPP TIL UTFORDRINGER, OG UTFORDRING PÅ PROSJEKTSIDENE*/
+.knapp-liten {
+    align-self: flex-start;
+    border: 1.5px solid var(--tekst);
+    border-radius: 40px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--tekst);
+    text-decoration: none;
+}
+
+.knapp-liten:hover {
+    background-color: var(--tekst);
+    color: var(--gul);
+}
+
+#challenges {
+    scroll-margin-top: 20px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .utfordring-liste.en {
+        grid-template-columns: 1fr;
+        max-width: 760px;
+    }
+}

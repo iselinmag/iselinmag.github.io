@@ -21,7 +21,6 @@
             <nav class="nav-liste">
                 <ul>
                     <li><a href="#prosjekter">Projects</a></li>
-                    <li><a href="#utfordringer">Challenges</a></li>
                     <li><a href="#om-meg">About</a></li>
                     <li><a href="#ferdigheter">Skills</a></li>
                     <li><a href="#erfaring">Experience</a></li>
@@ -33,15 +32,15 @@
         <main>
 <!--Banner: hvem jeg er og hva jeg kan, på 30 sekunder-->
             <section class="banner">
-                <h1>software <span>portfolio.</span></h1>
-                <p class="undertittel">Backend · Data · Software engineering</p>
-                <p class="banner-intro">Final-year Information Systems student. I build backend services, databases and CI/CD pipelines, and I test what I build.</p>
+                <h1>developer <span>portfolio.</span></h1>
+                <p class="undertittel">Databases · Data engineering · Backend</p>
+                <p class="banner-intro">I'm a final-year Information Systems student focused on databases, data engineering and backend systems. I enjoy designing databases, writing SQL and building solutions that turn raw data into useful information.</p>
                 <ul class="banner-stack">
+                    <li>SQL</li>
+                    <li>PostgreSQL &amp; MySQL</li>
+                    <li>Python</li>
                     <li>Java &amp; Spring Boot</li>
-                    <li>Node.js</li>
-                    <li>PostgreSQL</li>
                     <li>Docker &amp; AWS</li>
-                    <li>GitHub Actions</li>
                 </ul>
                 <div class="knapper">
                     <a href="#prosjekter" class="knapp gul">See my work</a>
@@ -57,6 +56,20 @@
 
                 <div class="prosjekt-liste utvalgt">
                     <article>
+                        <a href="skismoring.html"><img src="bilder/skismoring-er.png" alt="ER diagram of the ski wax database" class="prosjekt-bilde hvit"></a>
+                        <p class="etikett">Database · Team of 2</p>
+                        <h3><a href="skismoring.html">Ski Wax Database</a></h3>
+                        <p>MySQL database that suggests an alternative ski wax based on temperature, snow type, track and skill level.</p>
+                        <p class="resultat"><i class="fa-solid fa-check"></i> Normalised to BCNF · real data from Swix · role-based access</p>
+                        <ul class="teknologier">
+                            <li><i class="fa-solid fa-database"></i> MySQL</li>
+                            <li><i class="fa-solid fa-sitemap"></i> ER modelling</li>
+                            <li><i class="fa-solid fa-table"></i> SQL views</li>
+                        </ul>
+                        <a href="skismoring.html" class="lenke">Read the case study <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+
+                    <article>
                         <a href="lost-and-found.html"><img src="bilder/lostfound-pipeline.png" alt="GitHub Actions run with all seven stages green" class="prosjekt-bilde"></a>
                         <p class="etikett">Backend &amp; DevOps · Solo</p>
                         <h3><a href="lost-and-found.html">Campus Lost &amp; Found API</a></h3>
@@ -69,6 +82,7 @@
                             <li><i class="fa-brands fa-github"></i> GitHub Actions</li>
                         </ul>
                         <a href="lost-and-found.html" class="lenke">Read the case study <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="lost-and-found.html#challenges" class="knapp-liten">Challenges &amp; what I learned</a>
                     </article>
 
                     <article>
@@ -84,54 +98,7 @@
                             <li><i class="fa-solid fa-database"></i> PostgreSQL</li>
                         </ul>
                         <a href="tourplanner.html" class="lenke">Read the case study <i class="fa-solid fa-arrow-right"></i></a>
-                    </article>
-
-                    <article>
-                        <a href="skismoring.html"><img src="bilder/skismoring-er.png" alt="ER diagram of the ski wax database" class="prosjekt-bilde hvit"></a>
-                        <p class="etikett">Database · Team of 2</p>
-                        <h3><a href="skismoring.html">Ski Wax Database</a></h3>
-                        <p>MySQL database that suggests an alternative ski wax based on temperature, snow type, track and skill level.</p>
-                        <p class="resultat"><i class="fa-solid fa-check"></i> Normalised to BCNF · real data from Swix · role-based access</p>
-                        <ul class="teknologier">
-                            <li><i class="fa-solid fa-database"></i> MySQL</li>
-                            <li><i class="fa-solid fa-sitemap"></i> ER modelling</li>
-                            <li><i class="fa-solid fa-table"></i> SQL views</li>
-                        </ul>
-                        <a href="skismoring.html" class="lenke">Read the case study <i class="fa-solid fa-arrow-right"></i></a>
-                    </article>
-                </div>
-            </section>
-
-<!--Utfordringer og hva jeg lærte-->
-            <section id="utfordringer">
-                <h2>Challenges &amp; what I learned</h2>
-                <p class="under">Two technical problems, the choices I made and why.</p>
-                <div class="utfordring-liste">
-                    <article>
-                        <p class="etikett">Campus Lost &amp; Found API</p>
-                        <h3>Releasing a new version without taking the API down</h3>
-                        <dl>
-                            <dt>Problem</dt>
-                            <dd>A normal redeploy stops the running container, so every request during the restart fails.</dd>
-                            <dt>What I chose</dt>
-                            <dd>Two containers, blue and green, behind NGINX. The pipeline deploys to the idle one, waits for its health check and runs a k6 load test against it. Only then does a script point NGINX at it and reload.</dd>
-                            <dt>Why</dt>
-                            <dd>The live version keeps serving traffic the whole time. The script validates the new NGINX config first and restores the old one if it fails, and the old container stays up as a fallback. While switching, a client sent requests nonstop, and every one returned HTTP 200.</dd>
-                        </dl>
-                        <a href="lost-and-found.html" class="lenke">See the pipeline <i class="fa-solid fa-arrow-right"></i></a>
-                    </article>
-                    <article>
-                        <p class="etikett">TourPlanner</p>
-                        <h3>Searching for values that are not in the database</h3>
-                        <dl>
-                            <dt>Problem</dt>
-                            <dd>Tours have a popularity and a child-friendliness rating, worked out from the logs each time. Since they are never stored, a database query can't search them, so searching for "child-friendly" found nothing.</dd>
-                            <dt>What I chose</dt>
-                            <dd>Search in two passes. First a JPQL query over stored fields and log comments, then a filter in the service layer over the computed labels, merging the results without duplicates.</dd>
-                            <dt>Why</dt>
-                            <dd>Storing the values would mean keeping them in sync every time a log changes. Computing them on request keeps one source of truth, at the cost of a little more work per search.</dd>
-                        </dl>
-                        <a href="tourplanner.html" class="lenke">See the architecture <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="tourplanner.html#challenges" class="knapp-liten">Challenges &amp; what I learned</a>
                     </article>
                 </div>
             </section>
@@ -194,7 +161,7 @@
                 <div class="om-tekst">
                     <h2>Hi, I'm Iselin!</h2>
                     <p class="rolle">Information Systems student &amp; aspiring software developer</p>
-                    <p>I'm in my final year of a bachelor in Information Systems at Østfold University College, specialising in software engineering. I enjoy backend work most: APIs, databases and the pipelines that test and ship them. Before tech I worked several years as a dental health secretary and in retail, so I'm used to working carefully under time pressure and with people.</p>
+                    <p>I'm in my final year of a bachelor in Information Systems at Østfold University College, specialising in software engineering. I enjoy working with databases, data and backend systems: designing schemas, writing SQL and building the services around them. Before tech I worked several years as a dental health secretary and in retail, so I'm used to working carefully under time pressure and with people.</p>
                 </div>
                 <ul class="tall">
                     <li><strong>8</strong> Projects in development, design and marketing</li>
