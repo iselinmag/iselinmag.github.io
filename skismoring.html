@@ -122,6 +122,24 @@ WHERE temp_min &lt; 0
                 </ul>
             </section>
 
+            <!--Utfordring-->
+            <section class="prosjekt-blokk" id="challenges">
+                <h2>Challenges &amp; what I learned</h2>
+                <div class="utfordring-liste en">
+                    <article>
+                        <h3>Waxes that fit more than one skill level</h3>
+                        <dl>
+                            <dt>Problem</dt>
+                            <dd>Many waxes suit more than one group, for example both beginners and experienced skiers. With one foreign key from each wax to a skill level, a wax could only belong to one.</dd>
+                            <dt>What we chose</dt>
+                            <dd>We added the combinations as their own rows, such as "Beginner/Experienced" (ID 12) and "Experienced/Racer" (ID 23). A search for experienced skiers then asks for skill level 2, 12 or 23.</dd>
+                            <dt>What I would do now</dt>
+                            <dd>Use a junction table between waxes and skill levels, a many-to-many relationship. Each level is then stored once, and a search no longer needs to know which combined IDs exist.</dd>
+                        </dl>
+                    </article>
+                </div>
+            </section>
+
             <a href="index.html#prosjekter" class="lenke tilbake"><i class="fa-solid fa-arrow-left"></i> Back to all projects</a>
         </main>
 
