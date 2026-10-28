@@ -1246,3 +1246,178 @@ footer i {
     max-width: 65ch;
     color: var(--gra-tekst);
 }
+
+/*BANNER: KORT INTRO, TEKNOLOGIER OG KNAPPER*/
+.banner-intro {
+    margin-top: 20px;
+    max-width: 52ch;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.banner-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.banner-stack li {
+    border: 1.5px solid var(--gul);
+    border-radius: 40px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+}
+
+.banner .knapper {
+    margin-top: 25px;
+}
+
+.knapp.gul {
+    background-color: var(--gul);
+    border-color: var(--gul);
+    color: var(--tekst);
+}
+
+.knapp.omriss {
+    background-color: transparent;
+    border-color: var(--gul);
+    color: var(--gul);
+}
+
+.banner .sted {
+    margin-top: 20px;
+}
+
+/*UTVALGTE PROSJEKTER*/
+.resultat {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--tekst) !important;
+}
+
+.resultat i {
+    color: var(--oransje-tekst);
+    margin-right: 4px;
+}
+
+@media only screen and (min-width: 600px) {
+    .prosjekt-liste.utvalgt {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .prosjekt-liste.utvalgt {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/*UTFORDRINGER*/
+#utfordringer {
+    margin-top: 50px;
+}
+
+.utfordring-liste {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.utfordring-liste article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff8e1;
+    border: 1px solid #e5d39a;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.utfordring-liste .etikett {
+    align-self: flex-start;
+}
+
+.utfordring-liste h3 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.utfordring-liste dl {
+    display: grid;
+    gap: 6px;
+}
+
+.utfordring-liste dt {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--oransje-tekst);
+    margin-top: 6px;
+}
+
+.utfordring-liste dd {
+    margin: 0;
+    color: var(--gra-tekst);
+    font-size: 0.95rem;
+}
+
+.utfordring-liste .lenke {
+    margin-top: auto;
+}
+
+@media only screen and (min-width: 1000px) {
+    .utfordring-liste {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*ANDRE PROSJEKTER*/
+#andre-prosjekter {
+    margin-top: 50px;
+}
+
+.kompakt-liste {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.kompakt-liste li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 2px solid var(--tekst);
+    padding-top: 12px;
+}
+
+.kompakt-liste .etikett {
+    align-self: flex-start;
+}
+
+.kompakt-liste h3 {
+    font-size: 1.05rem;
+}
+
+.kompakt-liste h3 a {
+    color: var(--oransje-tekst);
+}
+
+.kompakt-liste p:last-child {
+    color: var(--gra-tekst);
+    font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 600px) {
+    .kompakt-liste {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .kompakt-liste {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

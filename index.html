@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="nb">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Iselin Magnussen, final-year Information Systems student focused on backend development, databases and CI/CD.">
     <link rel="stylesheet" href="style.css">
     <link href="ikoner/css/fontawesome.css" rel="stylesheet">
     <link href="ikoner/css/brands.css" rel="stylesheet">
     <link href="ikoner/css/solid.css" rel="stylesheet">
     <link href="ikoner/css/regular.css" rel="stylesheet">
-    <title>Iselin Magnussen – Portefølje</title>
+    <title>Iselin Magnussen – Portfolio</title>
 </head>
 
 <body>
@@ -19,155 +20,154 @@
             <a href="index.html" class="logo">Iselin Magnussen</a>
             <nav class="nav-liste">
                 <ul>
-                    <li><a href="#om-meg">Om meg</a></li>
-                    <li><a href="#prosjekter">Prosjekter</a></li>
-                    <li><a href="#ferdigheter">Ferdigheter</a></li>
-                    <li><a href="#erfaring">Erfaring</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#prosjekter">Projects</a></li>
+                    <li><a href="#utfordringer">Challenges</a></li>
+                    <li><a href="#om-meg">About</a></li>
+                    <li><a href="#ferdigheter">Skills</a></li>
+                    <li><a href="#erfaring">Experience</a></li>
+                    <li><a href="#kontakt">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-<!--Banner-->
+<!--Banner: hvem jeg er og hva jeg kan, på 30 sekunder-->
             <section class="banner">
                 <h1>software <span>portfolio.</span></h1>
                 <p class="undertittel">Backend · Data · Software engineering</p>
+                <p class="banner-intro">Final-year Information Systems student. I build backend services, databases and CI/CD pipelines, and I test what I build.</p>
+                <ul class="banner-stack">
+                    <li>Java &amp; Spring Boot</li>
+                    <li>Node.js</li>
+                    <li>PostgreSQL</li>
+                    <li>Docker &amp; AWS</li>
+                    <li>GitHub Actions</li>
+                </ul>
+                <div class="knapper">
+                    <a href="#prosjekter" class="knapp gul">See my work</a>
+                    <a href="cv.pdf" class="knapp omriss"><i class="fa-solid fa-download"></i> Download CV</a>
+                </div>
                 <p class="sted"><i class="fa-solid fa-location-dot"></i> Based in Norway, open to opportunities in Europe</p>
             </section>
 
-<!--Om meg-->
-            <section id="om-meg">
-                <div class="bilde-plass portrett">
-                    <!--Bytt ut med: <img src="bilder/portrett.jpg" alt="Portrett av Iselin Magnussen">-->
-                    <p>Portrett her</p>
-                </div>
-                <div class="om-tekst">
-                    <h2>Hi, I'm Iselin!</h2>
-                    <p class="rolle">Information Systems student &amp; aspiring software developer</p>
-                    <p>I'm a final-year Information Systems student who enjoys building applications, working with data and solving technical problems. I'm especially interested in backend development, databases and data analytics.</p>
-                    <div class="knapper">
-                        <a href="#prosjekter" class="knapp mork">Se prosjektene mine</a>
-                        <a href="cv.pdf" class="knapp lys"><i class="fa-solid fa-download"></i> Last ned CV</a>
-                    </div>
-                </div>
-                <ul class="tall">
-                    <li><strong>8</strong> Projects in development, design and marketing</li>
-                    <li><strong>10+</strong> Technologies worked with</li>
-                    <li><strong>2027</strong> Bachelor in Information Systems</li>
-                </ul>
-            </section>
-
-<!--Prosjekter-->
+<!--Utvalgte prosjekter-->
             <section id="prosjekter">
                 <h2>Featured projects</h2>
-                <p class="under">Et utvalg av prosjekter fra studiet</p>
-                <h3 class="undergruppe">Development</h3>
+                <p class="under">Three projects that show how I work as a developer.</p>
 
-                <div class="prosjekt-liste">
+                <div class="prosjekt-liste utvalgt">
                     <article>
-                        <a href="tourplanner.html"><img src="bilder/tourplanner-wireframe.png" alt="Wireframe av TourPlanner med turliste, kart og bildegalleri" class="prosjekt-bilde"></a>
-                        <p class="etikett">Fullstack</p>
-                        <h3><a href="tourplanner.html">TourPlanner</a></h3>
-                        <p>Web app for planning tours and logging trips, with real routes on a map, photo gallery and search. Team project with 35 unit tests.</p>
-                        <ul class="teknologier">
-                            <li><i class="fa-brands fa-angular"></i> Angular</li>
-                            <li><i class="fa-solid fa-leaf"></i> Spring Boot</li>
-                            <li><i class="fa-solid fa-database"></i> PostgreSQL</li>
-                        </ul>
-                        <a href="tourplanner.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
-                    </article>
-
-                    <article>
-                        <a href="lost-and-found.html"><img src="bilder/lostfound-pipeline.png" alt="GitHub Actions-pipeline der alle stegene er grønne" class="prosjekt-bilde"></a>
-                        <p class="etikett">Backend &amp; DevOps</p>
+                        <a href="lost-and-found.html"><img src="bilder/lostfound-pipeline.png" alt="GitHub Actions run with all seven stages green" class="prosjekt-bilde"></a>
+                        <p class="etikett">Backend &amp; DevOps · Solo</p>
                         <h3><a href="lost-and-found.html">Campus Lost &amp; Found API</a></h3>
-                        <p>Solo project: REST API with a seven-stage CI/CD pipeline and zero-downtime blue/green deployment on AWS.</p>
+                        <p>REST API with a seven-stage CI/CD pipeline that tests, scans, builds and deploys to AWS with blue/green deployment.</p>
+                        <p class="resultat"><i class="fa-solid fa-check"></i> Zero downtime on release · 20/20 tests · 86% coverage</p>
                         <ul class="teknologier">
                             <li><i class="fa-brands fa-node-js"></i> Node.js</li>
                             <li><i class="fa-brands fa-docker"></i> Docker</li>
                             <li><i class="fa-brands fa-aws"></i> AWS</li>
+                            <li><i class="fa-brands fa-github"></i> GitHub Actions</li>
                         </ul>
-                        <a href="lost-and-found.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="lost-and-found.html" class="lenke">Read the case study <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
                     <article>
-                        <a href="nettbutikk.html"><img src="bilder/nettbutikk-forside.jpg" alt="Forsiden av nettbutikken med meny, banner og produktkort" class="prosjekt-bilde"></a>
-                        <p class="etikett">Frontend</p>
-                        <h3><a href="nettbutikk.html">Nettbutikk</a></h3>
-                        <p>Responsive three-page web shop in plain HTML and CSS, built mobile first with semantic markup and at most 5 divs per page.</p>
+                        <a href="tourplanner.html"><img src="bilder/tourplanner-wireframe.png" alt="Wireframe of TourPlanner with tour list, map and image gallery" class="prosjekt-bilde"></a>
+                        <p class="etikett">Fullstack · Team of 2</p>
+                        <h3><a href="tourplanner.html">TourPlanner</a></h3>
+                        <p>Web app for planning tours and logging trips, with real routes on a map, login, search and a photo gallery.</p>
+                        <p class="resultat"><i class="fa-solid fa-check"></i> Layered architecture · 35 unit tests · JWT login</p>
                         <ul class="teknologier">
-                            <li><i class="fa-brands fa-html5"></i> HTML</li>
-                            <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
-                            <li><i class="fa-solid fa-mobile-screen"></i> Responsive</li>
+                            <li><i class="fa-brands fa-java"></i> Java</li>
+                            <li><i class="fa-solid fa-leaf"></i> Spring Boot</li>
+                            <li><i class="fa-brands fa-angular"></i> Angular</li>
+                            <li><i class="fa-solid fa-database"></i> PostgreSQL</li>
                         </ul>
-                        <a href="nettbutikk.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="tourplanner.html" class="lenke">Read the case study <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
+
                     <article>
-                        <a href="skismoring.html"><img src="bilder/skismoring-er.png" alt="ER-diagram for skismøringsdatabasen" class="prosjekt-bilde hvit"></a>
-                        <p class="etikett">Database</p>
+                        <a href="skismoring.html"><img src="bilder/skismoring-er.png" alt="ER diagram of the ski wax database" class="prosjekt-bilde hvit"></a>
+                        <p class="etikett">Database · Team of 2</p>
                         <h3><a href="skismoring.html">Ski Wax Database</a></h3>
-                        <p>Normalised MySQL database that suggests alternative ski waxes based on temperature, snow type, track and skill level.</p>
+                        <p>MySQL database that suggests an alternative ski wax based on temperature, snow type, track and skill level.</p>
+                        <p class="resultat"><i class="fa-solid fa-check"></i> Normalised to BCNF · real data from Swix · role-based access</p>
                         <ul class="teknologier">
                             <li><i class="fa-solid fa-database"></i> MySQL</li>
                             <li><i class="fa-solid fa-sitemap"></i> ER modelling</li>
                             <li><i class="fa-solid fa-table"></i> SQL views</li>
                         </ul>
-                        <a href="skismoring.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="skismoring.html" class="lenke">Read the case study <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
                 </div>
-                <h3 class="undergruppe">Design, requirements &amp; marketing</h3>
-                <div class="prosjekt-liste design">
+            </section>
+
+<!--Utfordringer og hva jeg lærte-->
+            <section id="utfordringer">
+                <h2>Challenges &amp; what I learned</h2>
+                <p class="under">Two technical problems, the choices I made and why.</p>
+                <div class="utfordring-liste">
                     <article>
-                        <a href="lumeo.html"><img src="bilder/lumeo-3d.jpg" alt="3D-modell av Lumeo-klokken i turkis" class="prosjekt-bilde"></a>
-                        <p class="etikett">UI/UX &amp; Prototyping</p>
-                        <h3><a href="lumeo.html">Lumeo</a></h3>
-                        <p>Wearable that guides people around campus with light, sound and vibration. Designed with Design Thinking and tested with real users.</p>
-                        <ul class="teknologier">
-                            <li><i class="fa-solid fa-pen-ruler"></i> Figma</li>
-                            <li><i class="fa-solid fa-microchip"></i> Micro:bit</li>
-                            <li><i class="fa-solid fa-hand"></i> Usability testing</li>
-                        </ul>
-                        <a href="lumeo.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="etikett">Campus Lost &amp; Found API</p>
+                        <h3>Releasing a new version without taking the API down</h3>
+                        <dl>
+                            <dt>Problem</dt>
+                            <dd>A normal redeploy stops the running container, so every request during the restart fails.</dd>
+                            <dt>What I chose</dt>
+                            <dd>Two containers, blue and green, behind NGINX. The pipeline deploys to the idle one, waits for its health check and runs a k6 load test against it. Only then does a script point NGINX at it and reload.</dd>
+                            <dt>Why</dt>
+                            <dd>The live version keeps serving traffic the whole time. The script validates the new NGINX config first and restores the old one if it fails, and the old container stays up as a fallback. While switching, a client sent requests nonstop, and every one returned HTTP 200.</dd>
+                        </dl>
+                        <a href="lost-and-found.html" class="lenke">See the pipeline <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
                     <article>
-                        <a href="greenclean.html"><img src="bilder/greenclean-kort.jpg" alt="Tre skjermer fra GreenClean: startskjerm, hovedmeny og skanner" class="prosjekt-bilde"></a>
-                        <p class="etikett">UX Design</p>
-                        <h3><a href="greenclean.html">GreenClean</a></h3>
-                        <p>App concept that helps people wash clothes with less microplastic pollution. From survey and personas to a tested Figma prototype.</p>
-                        <ul class="teknologier">
-                            <li><i class="fa-solid fa-pen-ruler"></i> Figma</li>
-                            <li><i class="fa-solid fa-leaf"></i> UN SDG 6</li>
-                            <li><i class="fa-solid fa-hand"></i> Usability testing</li>
-                        </ul>
-                        <a href="greenclean.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="etikett">TourPlanner</p>
+                        <h3>Searching for values that are not in the database</h3>
+                        <dl>
+                            <dt>Problem</dt>
+                            <dd>Tours have a popularity and a child-friendliness rating, worked out from the logs each time. Since they are never stored, a database query can't search them, so searching for "child-friendly" found nothing.</dd>
+                            <dt>What I chose</dt>
+                            <dd>Search in two passes. First a JPQL query over stored fields and log comments, then a filter in the service layer over the computed labels, merging the results without duplicates.</dd>
+                            <dt>Why</dt>
+                            <dd>Storing the values would mean keeping them in sync every time a log changes. Computing them on request keeps one source of truth, at the cost of a little more work per search.</dd>
+                        </dl>
+                        <a href="tourplanner.html" class="lenke">See the architecture <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
-                    <article>
-                        <a href="city-break.html"><img src="bilder/citybreak-landingsside.jpg" alt="Landingssiden for kampanjen City Break Barcelona" class="prosjekt-bilde"></a>
-                        <p class="etikett">Digital marketing</p>
-                        <h3><a href="city-break.html">City Break Barcelona</a></h3>
-                        <p>Campaign plan for a weekend-trip offer aimed at young adults: personas, customer journey, ads for five channels and a landing page.</p>
-                        <ul class="teknologier">
-                            <li><i class="fa-solid fa-bullhorn"></i> Campaign</li>
-                            <li><i class="fa-brands fa-instagram"></i> Social ads</li>
-                            <li><i class="fa-brands fa-html5"></i> Landing page</li>
-                        </ul>
-                        <a href="city-break.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
-                    </article>
-                    <article>
-                        <a href="quiz-krav.html"><img src="bilder/krav-gherkin.png" alt="Gherkin-scenarioer for et quizsystem" class="prosjekt-bilde hvit"></a>
+                </div>
+            </section>
+
+<!--Andre prosjekter-->
+            <section id="andre-prosjekter">
+                <h2>Other projects</h2>
+                <p class="under">Design, requirements, frontend and marketing work from my studies.</p>
+                <ul class="kompakt-liste">
+                    <li>
                         <p class="etikett">Requirements</p>
                         <h3><a href="quiz-krav.html">Quiz System Requirements</a></h3>
-                        <p>A lecturer's wishes turned into 20 numbered requirements, 15 user stories and 19 BDD scenarios, traceable from need to test.</p>
-                        <ul class="teknologier">
-                            <li><i class="fa-solid fa-list-check"></i> User stories</li>
-                            <li><i class="fa-solid fa-vial"></i> BDD / Gherkin</li>
-                            <li><i class="fa-solid fa-diagram-project"></i> Traceability</li>
-                        </ul>
-                        <a href="quiz-krav.html" class="lenke">Les mer om prosjektet <i class="fa-solid fa-arrow-right"></i></a>
-                    </article>
-                </div>
-                        </section>
+                        <p>A lecturer's wishes turned into 20 requirements, 15 user stories and 19 BDD scenarios in Gherkin.</p>
+                    </li>
+                    <li>
+                        <p class="etikett">Frontend</p>
+                        <h3><a href="nettbutikk.html">Web Shop</a></h3>
+                        <p>Responsive three-page shop in plain HTML and CSS, mobile first, with at most 5 divs per page.</p>
+                    </li>
+                    <li>
+                        <p class="etikett">UI/UX · Project lead</p>
+                        <h3><a href="lumeo.html">Lumeo</a></h3>
+                        <p>Wearable prototype that guides people around campus with light, sound and vibration.</p>
+                    </li>
+                    <li>
+                        <p class="etikett">UX design</p>
+                        <h3><a href="greenclean.html">GreenClean</a></h3>
+                        <p>App concept for eco-friendly laundry, from survey and personas to a tested Figma prototype.</p>
+                    </li>
+                    <li>
+                        <p class="etikett">Digital marketing</p>
+                        <h3><a href="city-break.html">City Break Barcelona</a></h3>
+                        <p>Campaign plan with personas, customer journey, ads for five channels and a landing page.</p>
+                    </li>
+                </ul>
+            </section>
 
 <!--Kommende: bacheloroppgave-->
             <section id="bachelor">
@@ -183,6 +183,24 @@
                         <li>My background as a dental health secretary helps with medical terms and documentation under time pressure</li>
                     </ul>
                 </div>
+            </section>
+
+<!--Om meg-->
+            <section id="om-meg">
+                <div class="bilde-plass portrett">
+                    <!--Bytt ut med: <img src="bilder/portrett.jpg" alt="Portrait of Iselin Magnussen">-->
+                    <p>Portrait</p>
+                </div>
+                <div class="om-tekst">
+                    <h2>Hi, I'm Iselin!</h2>
+                    <p class="rolle">Information Systems student &amp; aspiring software developer</p>
+                    <p>I'm in my final year of a bachelor in Information Systems at Østfold University College, specialising in software engineering. I enjoy backend work most: APIs, databases and the pipelines that test and ship them. Before tech I worked several years as a dental health secretary and in retail, so I'm used to working carefully under time pressure and with people.</p>
+                </div>
+                <ul class="tall">
+                    <li><strong>8</strong> Projects in development, design and marketing</li>
+                    <li><strong>10+</strong> Technologies worked with</li>
+                    <li><strong>2027</strong> Bachelor in Information Systems</li>
+                </ul>
             </section>
 
 <!--Ferdigheter-->
@@ -327,7 +345,7 @@
                     <li>linkinator</li>
                     <li>pa11y &amp; axe</li>
                 </ul>
-                <a href="https://github.com/iselinmag/iselinmag.github.io" class="lenke">Se koden og pipelinen på GitHub <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="https://github.com/iselinmag/iselinmag.github.io" class="lenke">See the code and pipeline on GitHub <i class="fa-solid fa-arrow-right"></i></a>
             </section>
         </main>
 

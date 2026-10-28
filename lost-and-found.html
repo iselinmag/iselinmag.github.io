@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nb">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +19,12 @@
             <a href="index.html" class="logo">Iselin Magnussen</a>
             <nav class="nav-liste">
                 <ul>
-                    <li><a href="index.html#om-meg">Om meg</a></li>
-                    <li><a href="index.html#prosjekter">Prosjekter</a></li>
-                    <li><a href="index.html#ferdigheter">Ferdigheter</a></li>
-                    <li><a href="index.html#erfaring">Erfaring</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="index.html#prosjekter">Projects</a></li>
+                    <li><a href="index.html#utfordringer">Challenges</a></li>
+                    <li><a href="index.html#om-meg">About</a></li>
+                    <li><a href="index.html#ferdigheter">Skills</a></li>
+                    <li><a href="index.html#erfaring">Experience</a></li>
+                    <li><a href="#kontakt">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -31,15 +32,15 @@
         <main class="prosjektside">
 <!--Brødsmuler-->
             <ol class="brodsmule">
-                <li><a href="index.html">Hjem</a></li>
-                <li><a href="index.html#prosjekter">Prosjekter</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#prosjekter">Projects</a></li>
                 <li>Campus Lost &amp; Found API</li>
             </ol>
 
 <!--Topp-->
             <section class="prosjekt-topp">
                 <div class="prosjekt-intro">
-                    <p class="etikett">Backend &amp; DevOps · Soloprosjekt</p>
+                    <p class="etikett">Backend &amp; DevOps · Solo project</p>
                     <h1>Campus Lost &amp; Found API</h1>
                     <p class="ingress">A REST API for a university's lost-and-found service, with a full CI/CD pipeline that tests, scans, builds and deploys every release to AWS using blue/green deployment.</p>
                     <ul class="fakta">
@@ -48,7 +49,7 @@
                         <li><strong>Result</strong> Zero downtime during release</li>
                     </ul>
                     <div class="knapper">
-                        <a href="https://github.com/iselinmag/campus-lost-and-found-api" class="knapp mork"><i class="fa-brands fa-github"></i> Se koden på GitHub</a>
+                        <a href="https://github.com/iselinmag/campus-lost-and-found-api" class="knapp mork"><i class="fa-brands fa-github"></i> See the code on GitHub</a>
                     </div>
                 </div>
                 <ul class="nokkeltall">
@@ -100,7 +101,7 @@
                     <li><strong>Switch</strong> Blue/green traffic</li>
                 </ol>
                 <figure class="skjermbilde">
-                    <img src="bilder/lostfound-pipeline.png" alt="GitHub Actions-kjøring der alle sju stegene er grønne, fra Quality &amp; Security til Blue Green Traffic Switch">
+                    <img src="bilder/lostfound-pipeline.png" alt="GitHub Actions run with all seven stages green, from Quality &amp; Security to Blue Green Traffic Switch">
                     <figcaption>A full deploy/production run in GitHub Actions, all stages green in 3 min 36 s.</figcaption>
                 </figure>
             </section>
@@ -138,17 +139,17 @@
                 <h2>Proof it works</h2>
                 <div class="skisser">
                     <figure>
-                        <img src="bilder/lostfound-sonarqube.png" alt="SonarQube-oversikt: Quality Gate bestått, 80,9 % dekning og 0,0 % duplisert kode">
+                        <img src="bilder/lostfound-sonarqube.png" alt="SonarQube overview: Quality Gate passed, 80.9% coverage and 0.0% duplicated code">
                         <figcaption>SonarQube: Quality Gate passed, 0.0% duplicated code.</figcaption>
                     </figure>
                     <figure>
-                        <img src="bilder/lostfound-zero-downtime.png" alt="To terminaler: til venstre svarer hver forespørsel med HTTP 200, til høyre bytter switch.sh trafikken fra blue til green">
+                        <img src="bilder/lostfound-zero-downtime.png" alt="Two terminals: on the left every request returns HTTP 200, on the right switch.sh moves traffic from blue to green">
                         <figcaption>Requests kept returning HTTP 200 while traffic switched from blue to green.</figcaption>
                     </figure>
                 </div>
             </section>
 
-            <a href="index.html#prosjekter" class="lenke tilbake"><i class="fa-solid fa-arrow-left"></i> Tilbake til alle prosjekter</a>
+            <a href="index.html#prosjekter" class="lenke tilbake"><i class="fa-solid fa-arrow-left"></i> Back to all projects</a>
         </main>
 
 <!--Kontakt-->

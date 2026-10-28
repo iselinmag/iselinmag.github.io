@@ -2,7 +2,7 @@
   "name": "iselinmag.github.io",
   "version": "1.0.0",
   "private": true,
-  "description": "Portefølje for Iselin Magnussen, ren HTML og CSS",
+  "description": "Portfolio of Iselin Magnussen, plain HTML and CSS",
   "scripts": {
     "test:html": "html-validate \"*.html\"",
     "test:links": "linkinator . --config linkinator.config.json",
