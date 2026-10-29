@@ -1473,12 +1473,16 @@ footer i {
 }
 
 .kort-meta {
+    align-self: flex-start;
     margin-top: 6px;
-    font-size: 0.75rem !important;
+    background-color: #8a5a3c; /* lysere brun, 5.5:1 mot teksten */
+    color: #fff8e1 !important;
+    padding: 4px 12px;
+    border-radius: 40px;
+    font-size: 0.7rem !important;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--oransje-tekst) !important;
 }
 
 .kort-resultat {
