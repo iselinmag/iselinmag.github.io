@@ -65,6 +65,16 @@ jobs:
             --exclude '.htmlvalidate.json' --exclude 'linkinator.config.json' \
             --exclude 'README.md' --exclude '.gitignore' ./ _site/
 
+      - name: Bust browser cache for CSS and JS
+        # Adds the commit id to the CSS and JS links, so browsers fetch the new
+        # files after every deploy instead of mixing new HTML with old CSS.
+        run: |
+          v="${GITHUB_SHA::7}"
+          find _site -name '*.html' -exec sed -i \
+            -e "s#style\.css\"#style.css?v=$v\"#" \
+            -e "s#ren-adresse\.js\"#ren-adresse.js?v=$v\"#" {} +
+          grep -c "style.css?v=$v" _site/index.html
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v4
