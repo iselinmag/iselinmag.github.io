@@ -154,7 +154,7 @@ article img, #om-meg img {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    background-color: var(--gul);
+    background-color: transparent;
     border: 3px solid var(--brun);
     padding: 2rem 1.5rem;
     border-radius: 30px;
