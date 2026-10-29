@@ -1514,3 +1514,90 @@ footer i {
 .lenke.dempet:hover {
     color: var(--oransje-tekst);
 }
+
+/*ANDRE PROSJEKTER SOM LISTE MED RADER*/
+.rad-liste {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff8e1;
+    border: 1px solid #e5d39a;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.rad-liste li + li {
+    border-top: 1px solid #e5d39a;
+}
+
+.rad {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 16px;
+    align-items: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--tekst);
+}
+
+.rad .kort-meta {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin: 0;
+}
+
+.rad-tekst {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.rad-tittel {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.rad-beskrivelse {
+    color: var(--gra-tekst);
+    font-size: 0.95rem;
+}
+
+.rad-pil {
+    color: var(--oransje-tekst);
+    transition: transform 0.15s;
+}
+
+.rad:hover {
+    background-color: #fbf0cc;
+}
+
+.rad:hover .rad-tittel {
+    color: var(--oransje-tekst);
+}
+
+.rad:hover .rad-pil {
+    transform: translateX(4px);
+}
+
+.rad:focus-visible {
+    outline: 3px solid var(--oransje);
+    outline-offset: -3px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .rad {
+        grid-template-columns: 220px 1fr auto;
+        padding: 20px 28px;
+    }
+
+    .rad .kort-meta {
+        grid-column: auto;
+        align-self: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rad-pil {
+        transition: none;
+    }
+}
