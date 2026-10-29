@@ -1465,3 +1465,48 @@ footer i {
     border-radius: 20px;
     border: 3px solid var(--brun);
 }
+
+/*UTVALGTE PROSJEKTER: ROLIGERE KORT*/
+.prosjekt-liste.utvalgt article {
+    gap: 10px;
+    padding: 15px 15px 20px;
+}
+
+.kort-meta {
+    margin-top: 6px;
+    font-size: 0.75rem !important;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--oransje-tekst) !important;
+}
+
+.kort-resultat {
+    font-size: 0.9rem !important;
+    color: var(--tekst) !important;
+    padding-left: 12px;
+    border-left: 3px solid var(--oransje);
+}
+
+.kort-stack {
+    font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 0.8rem !important;
+}
+
+.kort-lenker {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #e5d39a;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+}
+
+.lenke.dempet {
+    color: var(--gra-tekst);
+    font-weight: 500;
+}
+
+.lenke.dempet:hover {
+    color: var(--oransje-tekst);
+}
