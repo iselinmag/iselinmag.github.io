@@ -143,14 +143,14 @@ header {
     aspect-ratio: 1 / 1;
 }
 
-article img, #om-meg img {
+article img, #about img {
     width: 100%;
     height: auto;
     border-radius: 20px;
 }
 
 /*OM MEG*/
-#om-meg {
+#about {
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -225,7 +225,7 @@ article img, #om-meg img {
 }
 
 /*PROSJEKTER*/
-#prosjekter {
+#projects {
     margin-top: 50px;
 }
 
@@ -274,7 +274,7 @@ article img, #om-meg img {
     margin-top: auto;
 }
 
-.teknologier li, #ferdigheter li {
+.teknologier li, #skills li {
     background-color: var(--gul);
     padding: 4px 12px;
     border-radius: 40px;
@@ -294,44 +294,44 @@ article img, #om-meg img {
 }
 
 /*FERDIGHETER*/
-#ferdigheter {
+#skills {
     margin-top: 50px;
     background-color: var(--gul);
     padding: 2rem 1.5rem;
     border-radius: 30px;
 }
 
-#ferdigheter ul {
+#skills ul {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 15px;
 }
 
-#ferdigheter li {
+#skills li {
     background-color: transparent;
     border: 2px solid var(--tekst);
     padding: 8px 16px;
     font-size: 0.95rem;
 }
 
-#ferdigheter i {
+#skills i {
     margin-right: 5px;
 }
 
 /*UTDANNING OG ERFARING*/
-#erfaring {
+#experience {
     display: flex;
     flex-direction: column;
     gap: 40px;
     margin-top: 50px;
 }
 
-#erfaring h2 {
+#experience h2 {
     margin-bottom: 20px;
 }
 
-#erfaring h3 {
+#experience h3 {
     font-size: 1.05rem;
 }
 
@@ -456,7 +456,7 @@ footer i {
         font-size: 8rem;
     }
 
-    #om-meg {
+    #about {
         display: grid;
         grid-template-columns: 300px 1fr;
         align-items: center;
@@ -475,11 +475,11 @@ footer i {
         grid-template-columns: 1fr 1fr;
     }
 
-    #erfaring {
+    #experience {
         flex-direction: row;
     }
 
-    #erfaring > div {
+    #experience > div {
         flex: 1;
     }
 }
@@ -1102,12 +1102,12 @@ footer i {
     margin: 0;
 }
 
-#ferdigheter .ferdighet-grupper ul {
+#skills .ferdighet-grupper ul {
     margin-top: 10px;
     gap: 6px;
 }
 
-#ferdigheter .ferdighet-grupper li {
+#skills .ferdighet-grupper li {
     padding: 4px 12px;
     font-size: 0.85rem;
     border-width: 1.5px;
@@ -1145,7 +1145,7 @@ footer i {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    #om-meg {
+    #about {
         grid-template-rows: auto;
     }
 }
@@ -1238,7 +1238,7 @@ footer i {
 }
 
 /*OM DENNE SIDEN (forsiden)*/
-#om-siden {
+#about-this-site {
     margin-top: 50px;
     border-top: 2px solid var(--tekst);
     padding-top: 30px;
@@ -1247,7 +1247,7 @@ footer i {
     gap: 12px;
 }
 
-#om-siden p {
+#about-this-site p {
     max-width: 65ch;
     color: var(--gra-tekst);
 }
@@ -1379,7 +1379,7 @@ footer i {
 }
 
 /*ANDRE PROSJEKTER*/
-#andre-prosjekter {
+#other-projects {
     margin-top: 50px;
 }
 

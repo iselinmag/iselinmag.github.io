@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../ikoner/css/fontawesome.css" rel="stylesheet">
+    <link href="../ikoner/css/brands.css" rel="stylesheet">
+    <link href="../ikoner/css/solid.css" rel="stylesheet">
+    <link href="../ikoner/css/regular.css" rel="stylesheet">
+    <title>Ski Wax Database – Iselin Magnussen</title>
+    <script src="../js/ren-adresse.js" defer></script>
+</head>
+
+<body>
+    <div id="grid-container">
+
+<!--Toppmeny-->
+        <header>
+            <a href="../" class="logo">Iselin Magnussen</a>
+            <nav class="nav-liste">
+                <ul>
+                    <li><a href="../#about">About</a></li>
+                    <li><a href="../#projects">Projects</a></li>
+                    <li><a href="../#skills">Skills</a></li>
+                    <li><a href="../#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="prosjektside">
+<!--Brødsmuler-->
+            <ol class="brodsmule">
+                <li><a href="../">Home</a></li>
+                <li><a href="../#projects">Projects</a></li>
+                <li>Ski Wax Database</li>
+            </ol>
+
+<!--Topp-->
+            <section class="prosjekt-topp">
+                <div class="prosjekt-intro">
+                    <p class="etikett">Database · SQL</p>
+                    <h1>Ski Wax Database</h1>
+                    <p class="ingress">A MySQL database that helps skiers find an alternative wax when the one they planned to use is sold out, based on temperature, snow type, track conditions and skill level.</p>
+                    <ul class="fakta">
+                        <li><strong>Team</strong> 2 students</li>
+                        <li><strong>Course</strong> Database Systems, Østfold University College</li>
+                        <li><strong>When</strong> Spring 2025</li>
+                    </ul>
+                </div>
+                <img src="../bilder/skismoring-er.png" alt="ER diagram with the wax table in the middle, linked to category, track condition, skill level and snow type" class="prosjekt-foto hvit">
+            </section>
+
+<!--Prosess-->
+            <section class="prosjekt-blokk">
+                <h2>How we built it</h2>
+                <ol class="pipeline fem">
+                    <li><strong>Normalise</strong> One big table split up step by step to BCNF</li>
+                    <li><strong>Model</strong> ER model in MySQL Workbench</li>
+                    <li><strong>Implement</strong> Forward engineering to a SQL script</li>
+                    <li><strong>Fill</strong> Real wax data from Swix, imported from CSV</li>
+                    <li><strong>Query</strong> Views for the most common searches</li>
+                </ol>
+            </section>
+
+<!--Datamodellen-->
+            <section class="prosjekt-blokk">
+                <h2>The data model</h2>
+                <p class="under">One main table for the waxes, with four lookup tables. Foreign keys with ON UPDATE CASCADE keep the data consistent.</p>
+                <ul class="punkt-kort">
+                    <li><i class="fa-solid fa-snowflake"></i><h3>Snow type</h3><p>New, old, wet or universal snow.</p></li>
+                    <li><i class="fa-solid fa-layer-group"></i><h3>Category</h3><p>Grip wax, glide wax or klister.</p></li>
+                    <li><i class="fa-solid fa-person-skiing-nordic"></i><h3>Skill level</h3><p>Beginner, experienced or racer, and combinations.</p></li>
+                    <li><i class="fa-solid fa-road"></i><h3>Track</h3><p>Freshly groomed, worn or icy.</p></li>
+                </ul>
+            </section>
+
+<!--Spørring-->
+            <section class="prosjekt-blokk">
+                <h2>Example: finding a wax</h2>
+                <p class="under">A view joins the wax table with its lookup tables, so a search shows names instead of IDs. Here: grip wax for new snow when it is below freezing.</p>
+                <div class="to-kolonner">
+                    <pre class="kode"><code>CREATE VIEW View_Temp_Snø_Kategori AS
+SELECT
+    s.navn AS skismoring_navn,
+    s.temp_min,
+    s.temp_max,
+    s.snotype_id,
+    s.kategori_id,
+    sn.type AS snotype,
+    k.navn  AS kategori
+FROM Skismøring s
+JOIN Snøtype  sn ON s.snotype_id  = sn.snotype_id
+JOIN Kategori k  ON s.kategori_id = k.kategori_id;
+
+SELECT * FROM View_Temp_Snø_Kategori
+WHERE temp_min &lt; 0
+  AND temp_max &lt; 5
+  AND snotype_id  = 1   -- new snow
+  AND kategori_id = 1;  -- grip wax</code></pre>
+                    <figure class="skjermbilde">
+                        <img src="../bilder/skismoring-resultat.png" alt="Result in MySQL Workbench: nine grip waxes for new snow with temperature ranges">
+                        <figcaption>The result in MySQL Workbench.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+<!--Sikkerhet-->
+            <section class="prosjekt-blokk">
+                <h2>Access control</h2>
+                <p>Only users with an <code>admin_role</code> can add or delete waxes and track conditions. Regular users can search and create their own views. We left out DROP on purpose, so users can still delete views they have made.</p>
+            </section>
+
+<!--Læring-->
+            <section class="prosjekt-blokk bidrag">
+                <h2>What I learned</h2>
+                <ul class="punkter">
+                    <li>How normalisation removes duplicate data and makes updates safe</li>
+                    <li>Views make complex joins easy to reuse</li>
+                    <li>Realistic test data shows whether a design actually works</li>
+                    <li>Roles and grants are part of the design, not an afterthought</li>
+                </ul>
+            </section>
+
+            <!--Utfordring-->
+            <section class="prosjekt-blokk" id="challenges">
+                <h2>Challenges &amp; what I learned</h2>
+                <div class="utfordring-liste en">
+                    <article>
+                        <h3>Waxes that fit more than one skill level</h3>
+                        <dl>
+                            <dt>Problem</dt>
+                            <dd>Many waxes suit more than one group, for example both beginners and experienced skiers. With one foreign key from each wax to a skill level, a wax could only belong to one.</dd>
+                            <dt>What we chose</dt>
+                            <dd>We added the combinations as their own rows, such as "Beginner/Experienced" (ID 12) and "Experienced/Racer" (ID 23). A search for experienced skiers then asks for skill level 2, 12 or 23.</dd>
+                            <dt>What I would do now</dt>
+                            <dd>Use a junction table between waxes and skill levels, a many-to-many relationship. Each level is then stored once, and a search no longer needs to know which combined IDs exist.</dd>
+                        </dl>
+                    </article>
+                </div>
+            </section>
+
+            <a href="../#projects" class="lenke tilbake"><i class="fa-solid fa-arrow-left"></i> Back to all projects</a>
+        </main>
+
+<!--Kontakt-->
+        <footer id="contact">
+            <h2>Let's connect</h2>
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:iselinsophie99@outlook.com">iselinsophie99@outlook.com</a></li>
+                <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/iselinmagnussen">/iselinmagnussen</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/iselinmag">/iselinmag</a></li>
+            </ul>
+            <p class="copyright">© 2026 Iselin Magnussen</p>
+        </footer>
+
+    </div>
+</body>
+</html>

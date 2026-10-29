@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../ikoner/css/fontawesome.css" rel="stylesheet">
+    <link href="../ikoner/css/brands.css" rel="stylesheet">
+    <link href="../ikoner/css/solid.css" rel="stylesheet">
+    <link href="../ikoner/css/regular.css" rel="stylesheet">
+    <title>Quiz System Requirements – Iselin Magnussen</title>
+    <script src="../js/ren-adresse.js" defer></script>
+</head>
+
+<body>
+    <div id="grid-container">
+
+<!--Toppmeny-->
+        <header>
+            <a href="../" class="logo">Iselin Magnussen</a>
+            <nav class="nav-liste">
+                <ul>
+                    <li><a href="../#about">About</a></li>
+                    <li><a href="../#projects">Projects</a></li>
+                    <li><a href="../#skills">Skills</a></li>
+                    <li><a href="../#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="prosjektside">
+<!--Brødsmuler-->
+            <ol class="brodsmule">
+                <li><a href="../">Home</a></li>
+                <li><a href="../#projects">Projects</a></li>
+                <li>Quiz System Requirements</li>
+            </ol>
+
+<!--Topp-->
+            <section class="prosjekt-topp">
+                <div class="prosjekt-intro">
+                    <p class="etikett">Requirements engineering · Individual</p>
+                    <h1>Quiz System Requirements</h1>
+                    <p class="ingress">From a lecturer's email with wishes for a quiz tool to a full set of requirements: numbered requirement statements, epics and user stories, and BDD scenarios in Gherkin that can be tested.</p>
+                    <ul class="fakta">
+                        <li><strong>Team</strong> Individual assignments</li>
+                        <li><strong>Course</strong> Requirements Engineering, UAS Technikum Wien</li>
+                        <li><strong>When</strong> Spring 2026</li>
+                    </ul>
+                </div>
+                <ul class="nokkeltall">
+                    <li><strong>15</strong> functional requirements</li>
+                    <li><strong>3 + 2</strong> quality requirements and boundary conditions</li>
+                    <li><strong>15</strong> user stories in 3 epics</li>
+                    <li><strong>19</strong> Gherkin scenarios in 5 features</li>
+                </ul>
+            </section>
+
+<!--Kunden-->
+            <section class="prosjekt-blokk">
+                <h2>The customer's need</h2>
+                <p class="under">A lecturer wanted a tool to create quizzes for lectures, self-study and assessment. The wishes were informal and spread across one email, so the job was to turn them into requirements a developer can build and test.</p>
+                <ul class="krav">
+                    <li><i class="fa-solid fa-quote-left"></i> Several question types, including surveys with no right answer</li>
+                    <li><i class="fa-solid fa-quote-left"></i> Reuse questions across courses and find them quickly</li>
+                    <li><i class="fa-solid fa-quote-left"></i> Set date, time, duration and question order</li>
+                    <li><i class="fa-solid fa-quote-left"></i> Compare attempts to show learning progress</li>
+                    <li><i class="fa-solid fa-quote-left"></i> Up to 50 students at once, on any device</li>
+                    <li><i class="fa-solid fa-quote-left"></i> Developed in BDD style</li>
+                </ul>
+            </section>
+
+<!--Prosess-->
+            <section class="prosjekt-blokk">
+                <h2>Four steps</h2>
+                <ol class="pipeline fire">
+                    <li><strong>Numbering</strong> Compared hierarchical and ID-based schemes for traceability</li>
+                    <li><strong>Requirements</strong> 15 functional, 3 quality, 2 boundary, written from templates</li>
+                    <li><strong>User stories</strong> 3 epics, 15 stories, acceptance criteria, 2 roles</li>
+                    <li><strong>BDD</strong> 5 Gherkin features, 19 scenarios with error and edge cases</li>
+                </ol>
+            </section>
+
+<!--Sporbarhet-->
+            <section class="prosjekt-blokk">
+                <h2>One requirement, traced all the way</h2>
+                <p class="under">Every item points back to the one before it, so a failing test can be followed to the customer need it protects.</p>
+                <ol class="sporing">
+                    <li><span class="kode-id">Need</span> "Various question types"</li>
+                    <li><span class="kode-id">FR-001</span> The system shall allow the lecturer to create quiz questions of type single choice.</li>
+                    <li><span class="kode-id">US-01.01</span> As a lecturer, I want to create single-choice questions so that I can assess basic knowledge quickly.</li>
+                    <li><span class="kode-id">AC-01.01</span> Given I mark exactly one correct answer and save, then the system stores it as a single-choice question.</li>
+                </ol>
+                <pre class="kode"><code>Feature: FR-001 Create single-choice quiz questions
+
+  Scenario: Reject a question when more than one answer is marked as correct
+    Given a lecturer enters the question "Which number is even?"
+    And the lecturer provides 4 answer options: "2", "3", "4" and "5"
+    And the lecturer marks "2" and "4" as correct
+    When the lecturer saves the question
+    Then the question is not stored
+    And the lecturer is informed that exactly 1 correct answer must be selected</code></pre>
+            </section>
+
+<!--Featurefiler-->
+            <section class="prosjekt-blokk">
+                <h2>The five feature files</h2>
+                <p class="under">Each file covers one functional requirement, with concrete numbers and the cases where the system should say no.</p>
+                <ul class="maler filer">
+                    <li><span><a href="../filer/quiz-krav/FR-001.feature">FR-001</a> Create single-choice questions</span><strong>3 scenarios</strong></li>
+                    <li><span><a href="../filer/quiz-krav/FR-008.feature">FR-008</a> Build a quiz from existing questions</span><strong>3 scenarios</strong></li>
+                    <li><span><a href="../filer/quiz-krav/FR-011.feature">FR-011</a> Schedule date, start time and duration</span><strong>5 scenarios</strong></li>
+                    <li><span><a href="../filer/quiz-krav/FR-013.feature">FR-013</a> Compare results with earlier attempts</span><strong>5 scenarios</strong></li>
+                    <li><span><a href="../filer/quiz-krav/FR-015.feature">FR-015</a> Generate a report when the quiz ends</span><strong>3 scenarios</strong></li>
+                </ul>
+                <p class="liten">FR-011 tests the exact edges: the quiz opens at 10:00, is closed at 09:59, and closes again after 60 minutes.</p>
+            </section>
+
+<!--Læring-->
+            <section class="prosjekt-blokk bidrag">
+                <h2>What I learned</h2>
+                <ul class="punkter">
+                    <li>Stable IDs make it possible to trace a requirement both forward to code and back to the customer</li>
+                    <li>Vague wishes become testable once they have concrete numbers, like "within 2 seconds" or "50 students"</li>
+                    <li>Error and edge cases belong in the requirements, not only in the tests</li>
+                </ul>
+            </section>
+
+            <a href="../#projects" class="lenke tilbake"><i class="fa-solid fa-arrow-left"></i> Back to all projects</a>
+        </main>
+
+<!--Kontakt-->
+        <footer id="contact">
+            <h2>Let's connect</h2>
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:iselinsophie99@outlook.com">iselinsophie99@outlook.com</a></li>
+                <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/iselinmagnussen">/iselinmagnussen</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/iselinmag">/iselinmag</a></li>
+            </ul>
+            <p class="copyright">© 2026 Iselin Magnussen</p>
+        </footer>
+
+    </div>
+</body>
+</html>
