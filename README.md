@@ -1,10 +1,12 @@
 # Iselin Magnussen – Portfolio
 
-My developer portfolio, live at [devdrop.dev](https://devdrop.dev).
+My developer portfolio, live at [iselinmagnussen.devdrop.dev](https://iselinmagnussen.devdrop.dev).
 
 [![Test and deploy](https://github.com/iselinmag/iselinmag.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/iselinmag/iselinmag.github.io/actions/workflows/ci.yml)
 
 Built by hand in plain HTML and CSS, without frameworks, and designed mobile first.
+
+Built with help from Claude as a pair programmer. I decided the content, structure and design, set up the domain, pipeline and branch rules, and reviewed every change.
 
 ## How it is tested
 
@@ -35,7 +37,7 @@ npm run test:a11y
 
 ```
 index.html            Front page
-*.html                One page per project
+*/index.html          One folder per project, for clean URLs
 style.css             One stylesheet for the whole site
 bilder/               Images and videos
 filer/                Gherkin files and video captions
@@ -46,9 +48,7 @@ CNAME                 Custom domain for GitHub Pages
 
 ## Domain setup
 
-1. Verify `devdrop.dev` under Settings → Pages in the GitHub account.
-2. In the repository: Settings → Pages → Source: **GitHub Actions**. Custom domain: `devdrop.dev`.
-3. At the domain registrar:
-   - A records for `devdrop.dev` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`
-   - A CNAME record for `www` pointing to `iselinmag.github.io`
-4. Turn on **Enforce HTTPS** once the option appears. It can take up to a day.
+1. `devdrop.dev` is verified under Settings → Pages in the GitHub account, which also covers its subdomains.
+2. In the repository: Settings → Pages → Source: **GitHub Actions**. Custom domain: `iselinmagnussen.devdrop.dev`.
+3. At the domain registrar: a CNAME record for `iselinmagnussen` pointing to `iselinmag.github.io`.
+4. Turn on **Enforce HTTPS** once the option appears.
